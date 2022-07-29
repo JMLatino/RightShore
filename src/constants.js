@@ -1,6 +1,6 @@
 const designPrinciples = {
-    titel: 'Design Principles',
-    inputs: [
+    title: 'Design Principles',
+    entries: [
         {
             label: 'Time to market',
             value: ''
@@ -33,8 +33,8 @@ const designPrinciples = {
 };
 
 const projectCharacteristics = {
-    titel: 'Project Characteristics',
-    inputs: [
+    title: 'Project Characteristics',
+    entries: [
         {
             label: 'Size',
             value: ''
@@ -71,8 +71,8 @@ const projectCharacteristics = {
 };
 
 const sourcingRequirement = {
-    titel: 'Sourcing Requirement',
-    inputs: [
+    title: 'Sourcing Requirement',
+    entries: [
         {
             label: 'Complexity',
             value: ''
@@ -92,9 +92,9 @@ const sourcingRequirement = {
     ]
 };
 
-const formCategories = [
+export const categories = {
     designPrinciples,
     projectCharacteristics,
     sourcingRequirement
-];
+};
 
