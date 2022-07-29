@@ -1,5 +1,7 @@
+
 const designPrinciples = {
     title: 'Design Principles',
+    progress: 0,
     entries: [
         {
             label: 'Time to market',
@@ -29,11 +31,13 @@ const designPrinciples = {
             label: 'Governance',
             value: ''
         }
-    ]
+    ],
+    
 };
 
 const projectCharacteristics = {
     title: 'Project Characteristics',
+    progress: 0,
     entries: [
         {
             label: 'Size',
@@ -67,11 +71,12 @@ const projectCharacteristics = {
             label: 'Legacy Dominance',
             value: ''
         }
-    ]
+    ],
 };
 
 const sourcingRequirement = {
     title: 'Sourcing Requirement',
+    progress: 0,
     entries: [
         {
             label: 'Complexity',
@@ -89,7 +94,7 @@ const sourcingRequirement = {
             label: 'Incumbent Transition',
             value: ''
         }
-    ]
+    ],
 };
 
 export const categories = {
