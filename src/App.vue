@@ -1,6 +1,5 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import Rating from './components/Rating.vue'
 </script>
 
 <template>
@@ -15,14 +14,10 @@ import TheWelcome from './components/TheWelcome.vue'
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
             data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <div class="mb-3">
                 <label for="time-to-market" class="form-label">Time to market</label>
-                <input type="email" class="form-control" id="time-to-market">
-              </div>
-              <div class="mb-3">
+                <Rating />
                 <label for="time-to-market" class="form-label">Cost Consideration</label>
                 <input type="email" class="form-control" id="time-to-market">
-              </div>
               <div class="mb-3">
                 <label for="time-to-market" class="form-label">Quality</label>
                 <input type="email" class="form-control" id="time-to-market">
