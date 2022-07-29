@@ -14,6 +14,11 @@ export default {
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse'+name" aria-expanded="false" :aria-controls="name">
         {{ category.title }}
       </button>
+      <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+            aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+            style="width: 75%"></div>
+        </div>
     </h2>
     <div :id="'collapse'+name" class="accordion-collapse collapse" :aria-labelledby="name" data-bs-parent="#accordionExample">
       <div class="accordion-body">
