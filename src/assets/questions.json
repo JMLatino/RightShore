@@ -1,0 +1,172 @@
+[
+  {
+    "title": "Design Principles",
+    "entries": [
+      {
+        "id": 1,
+        "question": "Time to market",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 2,
+        "question": "Cost Consideration",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 3,
+        "question": "Quality Level",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 4,
+        "question": "Process Maturity",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 5,
+        "question": "Innovative Delivery",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 6,
+        "question": "Rank the Sustainability",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 7,
+        "question": "Rank the Governance",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      }
+    ]
+  },
+  {
+    "title": "Project Characteristics",
+    "entries": [
+      {
+        "id": 8,
+        "question": "Team Size",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 9,
+        "question": "Expected Timeline",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 10,
+        "question": "CIA Ratings",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 11,
+        "question": "Domain Intensity",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 12,
+        "question": "Packaged Solution",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 13,
+        "question": "Legacy Dominance",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 18,
+        "question": "Is it a local core system project",
+        "answers": ["Yes", "No"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 19,
+        "question": "Is it a research & developement project",
+        "answers": ["Yes", "No"],
+        "weight": ["0", "1", "2"]
+      }
+    ]
+  },
+  {
+    "title": "Sourcing Requirement",
+    "entries": [
+      {
+        "id": 14,
+        "question": "Complexity",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 15,
+        "question": "Ease of Collaboration",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 16,
+        "question": "Cultural Alignment",
+        "answers": ["Low priority", "Priority", "High Priority"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 17,
+        "question": "Incumbent Transition",
+        "answers": ["x", "xx", "xxx"],
+        "weight": ["0", "1", "2"]
+      }
+    ]
+  },
+  {
+    "title": "Mixed",
+    "entries": [
+      {
+        "id": 20,
+        "question": "Required language",
+        "answers": ["Dutch", "English"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 21,
+        "question": "What is the documentation language",
+        "answers": ["Dutch", "English"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 22,
+        "question": "Choose your data requirement flexibility standards",
+        "answers": ["National", "European", "International"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 23,
+        "question": "Type your compliance and regulation standards",
+        "answers": ["National", "European", "International"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 24,
+        "question": "Choose your technology type",
+        "answers": ["Legacy", "New"],
+        "weight": ["0", "1", "2"]
+      },
+      {
+        "id": 25,
+        "question": "Choose your tech category",
+        "answers": ["Fullstack", "Data Engineering", "Data Science"],
+        "weight": ["0", "1", "2"]
+      }
+    ]
+  }
+]

@@ -1,15 +1,4 @@
-<script>
-import Entry from './Entry.vue'
-
-export default {
-  components: { Entry },
-  props: ['category', 'name'],
-
-};
-</script>
-
 <template>
-
   <div class="accordion-item">
     <h2 class="accordion-header" :id="name">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -30,6 +19,14 @@ export default {
     </div>
   </div>
 </template>
+<script>
+import Entry from './Entry.vue'
 
+export default {
+  components: { Entry },
+  props: ['category', 'name'],
+
+};
+</script>
 <style scoped>
 </style>
