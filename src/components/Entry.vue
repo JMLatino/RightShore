@@ -4,21 +4,32 @@
       <label for="time-to-market" class="form-label">{{ entry.question }}</label>
     </span>
     <span class="col">
-    <button v-for="answer in entry.answers"
-      :key="answer" @click="answer"
-      class="p-3 btn btn-success mx-1">
+    <button v-for="(answer, answerId) in entry.answers"
+      :key="answer" @click="(e) => setAnswer(entry.id, answerId, e)"
+      class="p-3 btn mx-1"
+      >
         {{ answer }}
       </button>
-    <!-- <span class="col"> -->
-      <!-- <button @click=" entry.value = 1" class="rounded-circle p-3 btn btn-success mx-1"></button>
-      <button @click=" entry.value = 2" class="rounded-circle p-3 btn btn-warning mx-1"></button>
-      <button @click=" entry.value = 3" class="rounded-circle p-3 btn btn-danger mx-1"></button> -->
     </span>
   </div>
 </template>
 <script>
+import { usePreferencesStore } from '../store/preferences'
 export default {
   props: ['entry'],
+  methods: {
+    setAnswer(index, answer, e) {
+      e.target.classList.add('btn-secondary');
+      this.preferences.setPreference({ index, answer })
+    },
+  },
+  setup() {
+    const preferences = usePreferencesStore()
+    window.stores = { preferences }
+    return {
+      preferences
+    }
+  }
 }
 </script>
 <style scoped>

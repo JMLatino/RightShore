@@ -1,171 +1,145 @@
 [
   {
     "title": "Design Principles",
+    "catIndex": "0",
     "entries": [
       {
         "id": 1,
-        "question": "Time to market",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "What is time to market?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 2,
-        "question": "Cost Consideration",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "What is cost consideration? ",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 3,
-        "question": "Quality Level",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "What is the quality level?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 4,
-        "question": "Process Maturity",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "How do you rank the process maturity?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 5,
-        "question": "Innovative Delivery",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "How do you rank innovative delivery?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 6,
-        "question": "Rank the Sustainability",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "How do you rank the sustainability?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 7,
-        "question": "Rank the Governance",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "How do you rank governance?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       }
     ]
   },
   {
     "title": "Project Characteristics",
+    "catIndex": "1",
     "entries": [
       {
         "id": 8,
-        "question": "Team Size",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "What is the size of the team?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 9,
-        "question": "Expected Timeline",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "What is the expected timeline?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 10,
-        "question": "CIA Ratings",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "What is the CIA ratings?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 11,
-        "question": "Domain Intensity",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "How do you rank domain intensity?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 12,
-        "question": "Packaged Solution",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "How do you rank your packaged solution level?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 13,
-        "question": "Legacy Dominance",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
-      },
-      {
-        "id": 18,
-        "question": "Is it a local core system project",
-        "answers": ["Yes", "No"],
-        "weight": ["0", "1", "2"]
-      },
-      {
-        "id": 19,
-        "question": "Is it a research & developement project",
-        "answers": ["Yes", "No"],
-        "weight": ["0", "1", "2"]
+        "question": "How do you rank the legacy dominance?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       }
     ]
   },
   {
     "title": "Sourcing Requirement",
+    "catIndex": "2",
     "entries": [
       {
         "id": 14,
-        "question": "Complexity",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "How do you rank the complexity?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 15,
-        "question": "Ease of Collaboration",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "How do you rank the ease of collaboration?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 16,
-        "question": "Cultural Alignment",
-        "answers": ["Low priority", "Priority", "High Priority"],
-        "weight": ["0", "1", "2"]
+        "question": "How do you rank cultural alignment?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       },
       {
         "id": 17,
-        "question": "Incumbent Transition",
-        "answers": ["x", "xx", "xxx"],
-        "weight": ["0", "1", "2"]
+        "question": "How do you rank incumbent transition?",
+        "answers": ["Low priority", "Priority", "High Priority"]
       }
     ]
   },
   {
-    "title": "Mixed",
+    "title": "Verification Questions",
+    "catIndex": "3",
     "entries": [
       {
-        "id": 20,
+        "id": 18,
+        "question": "What type of project is it?",
+        "answers": ["Local core system", "R&D"]
+      },
+      {
+        "id": 19,
         "question": "Required language",
-        "answers": ["Dutch", "English"],
-        "weight": ["0", "1", "2"]
+        "answers": ["Dutch", "English"]
+      },
+      {
+        "id": 20,
+        "question": "Documentation language",
+        "answers": ["Dutch", "English"]
       },
       {
         "id": 21,
-        "question": "What is the documentation language",
-        "answers": ["Dutch", "English"],
-        "weight": ["0", "1", "2"]
+        "question": "Data requirement flexibility standards",
+        "answers": ["National", "European", "International"]
       },
       {
         "id": 22,
-        "question": "Choose your data requirement flexibility standards",
-        "answers": ["National", "European", "International"],
-        "weight": ["0", "1", "2"]
+        "question": "Compliance and Regulation standards",
+        "answers": ["National", "European", "International"]
       },
       {
         "id": 23,
-        "question": "Type your compliance and regulation standards",
-        "answers": ["National", "European", "International"],
-        "weight": ["0", "1", "2"]
+        "question": "Technology type",
+        "answers": ["Legacy", "New"]
       },
       {
         "id": 24,
-        "question": "Choose your technology type",
-        "answers": ["Legacy", "New"],
-        "weight": ["0", "1", "2"]
-      },
-      {
-        "id": 25,
-        "question": "Choose your tech category",
-        "answers": ["Fullstack", "Data Engineering", "Data Science"],
-        "weight": ["0", "1", "2"]
+        "question": "Technology category",
+        "answers": ["Data Science", "Data Engineering", "Fullstack"]
       }
     ]
   }
