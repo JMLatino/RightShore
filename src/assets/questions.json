@@ -5,38 +5,38 @@
     "entries": [
       {
         "id": 1,
-        "question": "What is time to market?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Time to market",
+        "answers": ["Low priority", "Medium Priority", "High Priority"]
       },
       {
         "id": 2,
-        "question": "What is cost consideration? ",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Cost Consideration",
+        "answers"  : ["Budget Constraint", "Optimum", "No Budget Constraint"]
       },
       {
         "id": 3,
-        "question": "What is the quality level?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Quality Level",
+        "answers"  : ["POC/MVP", "Good Quality", "High Standards"]
       },
       {
         "id": 4,
-        "question": "How do you rank the process maturity?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Process Maturity",
+        "answers"  : ["Innovation", "Mature", "Packged"]
       },
       {
         "id": 5,
-        "question": "How do you rank innovative delivery?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Innovative Delivery",
+        "answers"  : ["Neutral", "Medium", "High"]
       },
       {
         "id": 6,
-        "question": "How do you rank the sustainability?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Rank the Sustainability",
+		    "answers"  : ["Neutral", "Important", "Highly Important"]
       },
       {
         "id": 7,
-        "question": "How do you rank governance?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Rank the Governance",
+		    "answers"  : ["Neutral", "Important", "Highly Important"]
       }
     ]
   },
@@ -46,33 +46,33 @@
     "entries": [
       {
         "id": 8,
-        "question": "What is the size of the team?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Team Size",
+		    "answers"  : ["Small", "Medium", "Large"]
       },
       {
         "id": 9,
-        "question": "What is the expected timeline?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Expected Timeline",
+		    "answers"  : ["Short", "Long", "Long Term"]
       },
       {
         "id": 10,
-        "question": "What is the CIA ratings?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "CIA Ratings",
+		    "answers"  : ["Low", "Medium", "High"]
       },
       {
         "id": 11,
-        "question": "How do you rank domain intensity?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Domain Intensity",
+		    "answers"  : ["Neutral", "Heavy", "Very Heavy"]
       },
       {
         "id": 12,
-        "question": "How do you rank your packaged solution level?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Packaged Solution",
+		    "answers"  : ["Not Packaged", "Packaged", "Tailored Package"]
       },
       {
         "id": 13,
-        "question": "How do you rank the legacy dominance?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Legacy Dominance",
+		    "answers"  : ["Neutral", "Medium", "High"]
       }
     ]
   },
@@ -82,23 +82,23 @@
     "entries": [
       {
         "id": 14,
-        "question": "How do you rank the complexity?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Complexity",
+		    "answers"  : ["Simple", "Fair", "High"]
       },
       {
         "id": 15,
-        "question": "How do you rank the ease of collaboration?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Ease of Collaboration",
+		    "answers"  : ["Neutral", "Important", "Highly Important"]
       },
       {
         "id": 16,
-        "question": "How do you rank cultural alignment?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Cultural Alignment",
+		    "answers"  : ["Neutral", "Important", "Highly Important"]
       },
       {
         "id": 17,
-        "question": "How do you rank incumbent transition?",
-        "answers": ["Low priority", "Priority", "High Priority"]
+        "question" : "Incumbent Transition",
+		    "answers"  : ["Not Priority", "Priority", "High Priority"]
       }
     ]
   },
@@ -108,37 +108,37 @@
     "entries": [
       {
         "id": 18,
-        "question": "What type of project is it?",
-        "answers": ["Local core system", "R&D"]
+        "question" : "Local core system or a R&D project",
+		    "answers"  : ["Yes", "No"]
       },
       {
         "id": 19,
-        "question": "Required language",
-        "answers": ["Dutch", "English"]
+        "question" : "Required language",
+		    "answers"  : ["Dutch", "English"]
       },
       {
         "id": 20,
-        "question": "Documentation language",
-        "answers": ["Dutch", "English"]
+        "question" : "Type the documentation language",
+		    "answers"  : ["Dutch", "English"]
       },
       {
         "id": 21,
-        "question": "Data requirement flexibility standards",
-        "answers": ["National", "European", "International"]
+        "question" : "Data requirement standards",
+		    "answers"  : ["National", "European", "International"]
       },
       {
         "id": 22,
-        "question": "Compliance and Regulation standards",
-        "answers": ["National", "European", "International"]
+        "question" : "Compliance and Regulation standards",
+		    "answers"  : ["National", "European", "International"]
       },
       {
         "id": 23,
-        "question": "Technology type",
-        "answers": ["Legacy", "New"]
+        "question" : "Type your technology type",
+		    "answers"  : ["Legacy", "New"]
       },
       {
         "id": 24,
-        "question": "Technology category",
+        "question": "Type your tech category",
         "answers": ["Data Science", "Data Engineering", "Fullstack"]
       }
     ]

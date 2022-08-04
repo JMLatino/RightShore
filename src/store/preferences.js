@@ -6,6 +6,7 @@ export const usePreferencesStore = defineStore({
   state: () => ({
     preferences: questions,
     answers: {},
+    isCoffee: false,
   }),
   getters: {
     data: (state) => state.preferences,
@@ -26,6 +27,9 @@ export const usePreferencesStore = defineStore({
         })
       })
     },
+    toggleCoffee() {
+      this.isCoffee = !this.isCoffee;
+    }
   },
 })
 

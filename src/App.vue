@@ -2,14 +2,14 @@
   <main class="shadow p-3 bg-body rounded bg-custom d-flex flex-column align-items-center">
     <div class="rec-brown" />
     <div class="rec-gray" />
-    <div class="bg-custom-gray d-flex align-items-center flex-column">
+    <div class="bg-custom-gray d-flex align-items-center flex-column justify-content-between">
       <Questions />
       <BrewCoffee />
     </div>
     <div class="rec-gray-bottom d-flex flex-column align-items-center justify-content-between">
       <div>
         <div class="rec-dark-gray" />
-        <div class="d-flex pl-2">
+        <div class="d-flex justify-content-evenly">
           <div class="rec-light-gray me-3" />
           <div class="rec-light-gray ms-3" />
         </div>
@@ -32,12 +32,12 @@ import Coffee from './components/Coffee.vue';
 }
 .rec-brown {
   background-color: #3D2518;
-  height: 70px;
+  height: 60px;
   width: 55vw;
 }
 .rec-gray {
   background-color: #828282;
-  height: 70px;
+  height: 60px;
   width: 60vw;
 }
 .rec-gray-bottom {
@@ -67,6 +67,7 @@ import Coffee from './components/Coffee.vue';
 }
 .bg-custom-gray {
   background-color: #BDBDBD;
+  height: 600px;
   width: 60vw;
 }
 </style>

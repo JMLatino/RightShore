@@ -1,16 +1,15 @@
 <template>
   <div class="m-3 d-flex">
-    <span class="col-3">
+    <span class="col-6">
       <label for="time-to-market" class="form-label">{{ entry.question }}</label>
     </span>
-    <span class="col">
-    <button v-for="(answer, answerId) in entry.answers"
-      :key="answer" @click="(e) => setAnswer(entry.id, answerId, e)"
-      class="p-3 btn mx-1"
-      >
-        {{ answer }}
-      </button>
-    </span>
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <template v-for="(answer, answerId) in entry.answers" :key="answer">
+        <input type="radio" class="btn-check" name="btnradio" :id="`${entry.id}-${answerId}`" active
+        @click="setAnswer(entry.id, answerId)">
+        <label class="btn btn-outline-primary" :for="`${entry.id}-${answerId}`">{{ answer }}</label>
+      </template>
+    </div>
   </div>
 </template>
 <script>
@@ -18,8 +17,7 @@ import { usePreferencesStore } from '../store/preferences'
 export default {
   props: ['entry'],
   methods: {
-    setAnswer(index, answer, e) {
-      e.target.classList.add('btn-secondary');
+    setAnswer(index, answer) {
       this.preferences.setPreference({ index, answer })
     },
   },

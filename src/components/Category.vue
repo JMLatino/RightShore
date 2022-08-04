@@ -23,16 +23,9 @@ import { usePreferencesStore } from '../store/preferences'
 export default {
   components: { Entry },
   props: ['category', 'name'],
-  data() {
-    return {
-      isFilledIn: false
-    }
-  },
-   watch: {
-     preferences(newQuestion, oldQuestion) {
-      console.log(preferences);
-       if (this.preferences.answered(this.category.catIndex) === this.category.entries.length)
-         this.isFilledIn = true;
+  computed: {
+    isFilledIn() {
+      return this.preferences.answered(this.category.catIndex) === this.category.entries.length
     }
   },
   setup() {
@@ -49,7 +42,7 @@ export default {
   margin-left: 5px;
 }
 .fixed-height-accordion {
-  max-height: 350px;
+  height: 255px;
   overflow-y: scroll;
 }
 </style>
