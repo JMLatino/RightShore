@@ -1,5 +1,5 @@
 <template>
-  <div class="accordion col-10 p-5" id="accordionExample">
+  <div class="accordion col-10" id="accordionExample">
     <Category v-for="(c,n) in preferences.data" :key="c.title" :category="c" :name="n"/>
   </div>
 </template>
