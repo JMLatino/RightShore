@@ -28,7 +28,7 @@ export const usePreferencesStore = defineStore({
       })
     },
     toggleCoffee() {
-      this.isCoffee = !this.isCoffee;
+      this.isCoffee = true;
     }
   },
 })

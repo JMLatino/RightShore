@@ -6,7 +6,7 @@
         <div>
           {{ category.title }} {{category.progress}}
         </div>
-        <div class="ms-auto p-2">{{preferences.answered(category.catIndex)}} / {{category.entries.length}}  {{isFilledIn}}</div>
+        <div class="ms-auto p-2">{{preferences.answered(category.catIndex)}} / {{category.entries.length}}</div>
       </button>
     </h2>
     <div :id="'collapse' + name" class="accordion-collapse collapse" :aria-labelledby="name"

@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :disabled="!isComplete" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="brewStrategy">
+  <button type="button" :disabled="!isComplete" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="brewStrategy">
     Brew your strategy
   </button>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
