@@ -1,7 +1,7 @@
 <template>
   <div class="accordion-item">
-    <h2 class="accordion-header" :id="name">
-      <button class="accordion-button collapsed d-flex" type="button" data-bs-toggle="collapse"
+    <h2 class="accordion-header w-100" :id="name">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
         :data-bs-target="'#collapse' + name" aria-expanded="false" :aria-controls="name">
         <div>
           {{ category.title }} {{category.progress}}
@@ -11,7 +11,7 @@
     </h2>
     <div :id="'collapse' + name" class="accordion-collapse collapse" :aria-labelledby="name"
       data-bs-parent="#accordionExample">
-      <div class="accordion-body fixed-height-accordion">
+      <div class="accordion-body fixed-height-accordion overflow-hidden">
         <Entry v-for="e in category.entries" :key="e" :entry="e" />
       </div>
     </div>
@@ -37,7 +37,12 @@ export default {
   }
 };
 </script>
+
+
 <style scoped>
+.accordion-body {
+  background: var(--black);
+}
 .accordion-button::after {
   margin-left: 5px;
 }
@@ -45,4 +50,8 @@ export default {
   height: 255px;
   overflow-y: scroll;
 }
+  button.accordion-button {
+    width: 500px;
+    background: #17ABDA!important;
+  }
 </style>
