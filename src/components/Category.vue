@@ -1,17 +1,23 @@
 <template>
   <div class="accordion-item">
-    <h2 class="accordion-header w-100" :id="name">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+    <h2 class="accordion-header w-100 " :id="name">
+      <button class="accordion-button w-100" type="button" data-bs-toggle="collapse"
         :data-bs-target="'#collapse' + name" aria-expanded="false" :aria-controls="name">
-        <div>
+        <div class="text-light">
           {{ category.title }} {{category.progress}}
         </div>
-        <div class="ms-auto p-2">{{preferences.answered(category.catIndex)}} / {{category.entries.length}}</div>
+        <div class="ms-auto p-2 text-light">{{preferences.answered(category.catIndex)}} / {{category.entries.length}}</div>
       </button>
     </h2>
-    <div :id="'collapse' + name" class="accordion-collapse collapse" :aria-labelledby="name"
+    <div 
+      :id="'collapse' + name" 
+      class="accordion-collapse"
+      :class="{
+        'collapse alternative': name !== 0
+      }" 
+      :aria-labelledby="name"
       data-bs-parent="#accordionExample">
-      <div class="accordion-body fixed-height-accordion overflow-hidden">
+      <div class="accordion-body fixed-height-accordion overflow-hidden h-100 p-0">
         <Entry v-for="e in category.entries" :key="e" :entry="e" />
       </div>
     </div>
@@ -45,6 +51,7 @@ export default {
 }
 .accordion-button::after {
   margin-left: 5px;
+  display: none;;
 }
 .fixed-height-accordion {
   height: 255px;
@@ -53,5 +60,15 @@ export default {
   button.accordion-button {
     width: 500px;
     background: #17ABDA!important;
+  }
+
+  .accordion-item {
+    border: none!important;
+  }
+  
+  .accordion-collapse .collapse .alternative{
+    background: red!important;
+    opacity: 0.1!important;
+    
   }
 </style>
