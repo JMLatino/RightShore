@@ -41,7 +41,6 @@ export default {
   border: solid 1px rgb(247, 243, 243);
   border-radius: 6px!important;
 }
-
 .btn-active {
   color: white;
   --bs-btn-hover-color: #fff;
