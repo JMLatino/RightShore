@@ -1,5 +1,5 @@
 <template>
-  <div class="accordion col-11" id="accordionExample">
+  <div id="accordionExample" class="accordion col-12 text-light" >
     <Category v-for="(c,n) in preferences.data" :key="c.title" :category="c" :name="n"/>
   </div>
 </template>
@@ -19,7 +19,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

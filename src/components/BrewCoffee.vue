@@ -1,7 +1,10 @@
 <template>
-  <button type="button" :disabled="!isComplete" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="brewStrategy">
+  <button type="button" :disabled="isComplete" class="btn btn-custom mb-3 px-5 py-2" @click="brewStrategy">
     Brew your strategy
   </button>
+  <!-- <button type="button" :disabled="isComplete" class="btn btn-custom mb-3 px-5 py-2" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="brewStrategy">
+    Brew your strategy
+  </button>   -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -44,10 +47,15 @@ export default {
   },
   methods: {
     brewStrategy() {
-      window.scrollTo(0, document.body.scrollHeight);
-      this.preferences.toggleCoffee();
-      const option = this.preferences.answers.q1;
-      this.result = this.coffeeResults[option];
+      // window.scrollTo(0, document.body.scrollHeight);
+      window.scrollTo({
+        top: 1000,
+        left: 0,
+        behavior: 'smooth'
+      });      
+      // this.preferences.toggleCoffee();
+      // const option = this.preferences.answers.q1;
+      // this.result = this.coffeeResults[option];
     },
   },
   computed: {
@@ -65,6 +73,15 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.btn-custom {
+  color: white;
+  font-size: 1.5em;
+  background: #2299DA;;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #17ABDA;
+  --bs-btn-active-color: white;
+  --bs-btn-active-bg: #17ABDA;
+  --bs-btn-active-border-color: #0070AD;
+}
 </style>
