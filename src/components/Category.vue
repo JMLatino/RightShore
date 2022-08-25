@@ -13,7 +13,7 @@
       :id="'collapse' + name" 
       class="accordion-collapse"
       :class="{
-        'collapse alternative': name !== 0
+        'collapse': name !== 0
       }" 
       :aria-labelledby="name"
       data-bs-parent="#accordionExample">
@@ -66,9 +66,9 @@ export default {
     border: none!important;
   }
   
-  .accordion-collapse .collapse .alternative{
-    background: red!important;
-    opacity: 0.1!important;
-    
+  .accordion-collapse .collapse {
+    /* background: red!important; */
+    /* opacity: 0.1!important; */
   }
+  
 </style>

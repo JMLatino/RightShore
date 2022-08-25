@@ -1,20 +1,22 @@
 <template>
-  <main class="min-vh-100 min-vw-100">
-    <div class="container rightshore pt-3">
-      <div class="coffee-maker mx-auto">
+  <main class="min-vh-100 min-vw-100 d-flex align-items-end">
+    <div class="container rightshore p-0 mt-2">
+      <div class="coffee-maker col-10 mx-auto">
         <div class="row d-flex align-items-center justify-content-center">
           <div class="lid col-11"></div>
           <div class="beans col-11"><span></span></div>
           <div class="edge"></div>
-          <div class="top-machine px-5 py-0  d-flex align-items-center">
+          <div class="top-machine px-5 py-0 d-flex align-items-center">
             <div class="top-machine-inner row mx-auto h-100">
               <div class="logos d-flex justify-content-end py-3 px-0">
                 <img src="@/assets/capgemini-icon.svg" alt="Capgemini" class="me-3">
                 <img src="@/assets/abnamro-icon.svg" alt="ABN AMRO" class="me-3">
               </div>
-              <div class="interface col-12 rounded p-3">
-                <div class="col-12 d-flex align-items-center flex-column justify-content-between">
-                  <Questions />
+              <div class="interface col-12 rounded p-2 d-flex justify-content-center align-items-center">
+                <div class="interface-inner col-12">
+                  <div class="col-12 d-flex align-items-center flex-column justify-content-between">
+                    <Questions />
+                  </div>
                 </div>
               </div>
               <div class="brew-coffee d-flex justify-content-center align-items-center ">
@@ -29,7 +31,8 @@
                 <div class="col-4 position-absolute"></div>
               </div>
             </div>
-            <svg id="coffee" class="position-absolute" width="259" height="180" viewBox="0 0 259 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg id="coffee" class="position-absolute" width="259" height="180" viewBox="0 0 259 180" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M259 0H53L55.8218 23.0874C24.0777 28.8271 0 56.6017 0 90C0 127.555 30.4446 158 68 158C69.4425 158 70.8746 157.955 72.2948 157.867L75 180H238L259 0ZM57.7548 38.9028L70.4677 142.918C69.4854 142.972 68.496 143 67.5 143C38.5051 143 15 119.495 15 90.5C15 64.835 33.4162 43.4713 57.7548 38.9028Z"
                 fill="white" fill-opacity="0.7" />
@@ -41,13 +44,13 @@
               <g mask="url(#mask0_0_1)">
                 <rect x="44.4818" y="30.7705" width="214.376" height="36.0831" fill="#BB7A2F" />
               </g>
-            </svg>            
+            </svg>
           </div>
           <div class="base-machine">
           </div>
         </div>
       </div>
-      <div class="table"></div>
+      <div class="table mb-0"></div>
     </div>
   </main>
 </template>
@@ -60,21 +63,29 @@ import BrewCoffee from './components/BrewCoffee.vue';
 <style>
 :root {
   --black: #333333;
+  /* font-size: 62.5%; */
 }
 
 * {
   /* outline: solid 1px; */
 }
 
-
-/* html, body {overflow: hidden}; */
-
-main {
-  background: linear-gradient(293.55deg, #17ABDA 20.47%, #0173B0 92.37%, #0070AD 98.71%)
+body {
+  background: linear-gradient(293.55deg, #17ABDA 20.47%, #0173B0 92.37%, #0070AD 98.71%);
 }
 
-.coffee-maker {
-  max-width: 1000px;
+html::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.rightshore {
+  animation: zoom-in-zoom-out 2s ease-in-out 1;
+  max-width: 987px;
 }
 
 .lid {
@@ -90,8 +101,12 @@ main {
 }
 
 svg#coffee {
-  top: 100%;
-  transform: translate(116.5%, -100%);
+  top: 40%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 5%;
 }
 
 .edge {
@@ -117,14 +132,19 @@ svg#coffee {
 }
 
 .interface {
-  overflow-y: hidden;
-  overflow-y: scroll;
   background: var(--black);
   height: 75%;
   z-index: 1;
 }
 
-.interface::-webkit-scrollbar {
+.interface-inner {
+  height: 100%;
+  z-index: -1;
+  overflow-y: hidden !important;
+  overflow-y: scroll !important;
+}
+
+.interface-inner::-webkit-scrollbar {
   display: none;
 }
 
@@ -168,5 +188,15 @@ p,
 label,
 .btn {
   color: white;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
 }
 </style>
