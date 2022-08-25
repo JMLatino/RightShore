@@ -1,8 +1,14 @@
 <template>
   <div class="accordion-item">
-    <h2 class="accordion-header w-100 " :id="name">
-      <button class="accordion-button w-100" type="button" data-bs-toggle="collapse"
-        :data-bs-target="'#collapse' + name" aria-expanded="false" :aria-controls="name">
+    <h2 class="accordion-header w-100 mb-2" :id="name">
+      <button 
+        class="accordion-button d-flex rounded w-100 px-3 py-1"
+        :class="{ 'collapsed': name !== 0 }"
+        type="button" 
+        data-bs-toggle="collapse"
+        :data-bs-target="'#collapse' + name" 
+        :aria-expanded="'false' ? name !== 0 : 'true'" 
+        :aria-controls="name">
         <div class="text-light">
           {{ category.title }} {{category.progress}}
         </div>
@@ -11,13 +17,11 @@
     </h2>
     <div 
       :id="'collapse' + name" 
-      class="accordion-collapse"
-      :class="{
-        'collapse': name !== 0
-      }" 
+      class="accordion-collapse collapse"
+      :class="{ 'show': name === 0 }"
       :aria-labelledby="name"
       data-bs-parent="#accordionExample">
-      <div class="accordion-body fixed-height-accordion overflow-hidden h-100 p-0">
+      <div class="accordion-body overflow-hidden p-0">
         <Entry v-for="e in category.entries" :key="e" :entry="e" />
       </div>
     </div>
@@ -49,6 +53,12 @@ export default {
 .accordion-body {
   background: var(--black);
 }
+.accordion-item:last-child {
+  margin-bottom: 0!important;
+}
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
 .accordion-button::after {
   margin-left: 5px;
   display: none;;
@@ -56,6 +66,9 @@ export default {
 .fixed-height-accordion {
   height: 255px;
   overflow-y: scroll;
+}
+.accordion-item {
+  background: none;
 }
   button.accordion-button {
     width: 500px;

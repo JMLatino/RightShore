@@ -5,8 +5,8 @@
     "entries": [
       {
         "id": 1,
-        "question" : "Time to market something something",
-        "answers": ["Low priority", "Medium Priority", "High Priority"]
+        "question" : "Time to market",
+        "answers": ["Low Priority", "Medium Priority", "High Priority"]
       },
       {
         "id": 2,
@@ -21,7 +21,7 @@
       {
         "id": 4,
         "question" : "Process Maturity",
-        "answers"  : ["Innovation", "Mature", "Packged"]
+        "answers"  : ["Innovation", "Mature", "Packaged"]
       },
       {
         "id": 5,
@@ -98,7 +98,7 @@
       {
         "id": 17,
         "question" : "Incumbent Transition",
-		    "answers"  : ["Not Priority", "Priority", "High Priority"]
+		    "answers"  : ["No Priority", "Priority", "High Priority"]
       }
     ]
   },
