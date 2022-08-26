@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :disabled="isComplete" class="btn btn-custom mb-3 px-5 py-2" @click="brewStrategy">
+  <button type="button" :disabled="!isComplete" class="btn btn-custom mb-3 px-4 py-1" @click="brewStrategy">
     Brew your strategy
   </button>
   <!-- <button type="button" :disabled="isComplete" class="btn btn-custom mb-3 px-5 py-2" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="brewStrategy">
@@ -9,11 +9,11 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">{{result.title}}</h5>
+          <h5 class="modal-title" id="exampleModalLabel">{{ result.title }}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          {{result.description}}
+          {{ result.description }}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -47,15 +47,15 @@ export default {
   },
   methods: {
     brewStrategy() {
-      // window.scrollTo(0, document.body.scrollHeight);
-      window.scrollTo({
-        top: 1000,
-        left: 0,
-        behavior: 'smooth'
-      });      
-      // this.preferences.toggleCoffee();
-      // const option = this.preferences.answers.q1;
-      // this.result = this.coffeeResults[option];
+      window.scrollTo(0, document.body.scrollHeight);
+      // window.scrollTo({
+      //   top: 1000,
+      //   left: 0,
+      //   behavior: 'smooth'
+      // });
+      this.preferences.toggleCoffee();
+      const option = this.preferences.answers.q1;
+      this.result = this.coffeeResults[option];
     },
   },
   computed: {
@@ -77,7 +77,10 @@ export default {
 .btn-custom {
   color: white;
   font-size: 1.5em;
-  background: #2299DA;;
+  border-radius: 13px;
+  background: #17ABDA;
+  border: 1px solid #FFFFFF;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #17ABDA;
   --bs-btn-active-color: white;

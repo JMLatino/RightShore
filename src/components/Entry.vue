@@ -59,7 +59,7 @@ label.btn:not(label.btn:last-child){
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #17ABDA;
   --bs-btn-active-color: white;
-  --bs-btn-active-bg: #17ABDA;
+  /* --bs-btn-active-bg: #17ABDA; */
   --bs-btn-active-border-color: #0070AD;
 }
   
