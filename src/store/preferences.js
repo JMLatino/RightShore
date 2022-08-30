@@ -36,6 +36,8 @@ export const usePreferencesStore = defineStore({
         radioBtn[i].checked = false;
       }
       this.answers = {}
+      document.getElementById('recommendation').innerHTML = "";
+      document.getElementById('waveShape').classList.remove('animate');
       console.log(this.answers)
     },
     handleClick(){

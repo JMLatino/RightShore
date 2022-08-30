@@ -3,7 +3,7 @@
     <button type="button" :disabled="!isReset" class="btn btn-reset mb-3 px-4 py-1" @click="handleReset">
       Reset
     </button>
-    <button type="button" :disabled="isComplete" tabindex="0" class="btn btn-custom mb-3 px-4 py-1" @click="brewStrategy">
+    <button type="button" :disabled="!isComplete" tabindex="0" class="btn btn-custom mb-3 px-4 py-1" @click="brewStrategy">
       Brew your strategy
     </button>
   </div>
@@ -19,7 +19,14 @@ export default {
   },
   methods: {
     handleReset() {
-      this.preferences.handleReset();
+      const radioBtn = document.getElementsByClassName("btn-check")
+      for (let i = 0; i < radioBtn.length; i++) {
+        radioBtn[i].checked = false;
+      }
+      this.answers = {}
+      document.getElementById('recommendation').innerHTML = "";
+      document.getElementById('waveShape').classList.remove('animate');
+      console.log(this.answers)
     },
     brewStrategy() {
       window.scrollTo(0, document.body.scrollHeight);

@@ -1,7 +1,6 @@
 <template>
   <div class="accordion-item">
     <h2 class="accordion-header w-100 mb-2" :id="name">
-      <h1 class="text-light">{{ toggleHeader }}</h1>
       <button class="accordion-button d-flex rounded w-100 px-3 py-1" :class="{ 'completed': isFilledIn }" type="button"
         data-bs-toggle="collapse" :data-bs-target="'#collapse' + name" :aria-expanded="'false'"
         :aria-controls="name">
@@ -34,10 +33,8 @@ export default {
       // return this.preferences.answered(Object.keys(this.preferences.answers).length)
     },
     isFilledIn() {
+      console.log('isfilledin ', this.preferences.answered(this.category.catIndex) === this.category.entries.length)
       return this.preferences.answered(this.category.catIndex) === this.category.entries.length
-    },
-    toggleHeader(){
-      return console.log(this.category.entries.length)
     }
   },
   setup() {
@@ -96,4 +93,9 @@ export default {
   background: #87C4D6;
   color: white;
 }
+.accordion-button.reset {
+  background: #FFF;
+  color: var(--black);
+}
+
 </style>
