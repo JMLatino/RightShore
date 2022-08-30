@@ -29,7 +29,18 @@ export const usePreferencesStore = defineStore({
     },
     toggleCoffee() {
       this.isCoffee = true;
-    }
+    },
+    handleReset() {
+      const radioBtn = document.getElementsByClassName("btn-check")
+      for (let i = 0; i < radioBtn.length; i++) {
+        radioBtn[i].checked = false;
+      }
+      this.answers = {}
+      console.log(this.answers)
+    },
+    handleClick(){
+      document.getElementById('waveShape').classList.add('animate');
+    }    
   },
 })
 

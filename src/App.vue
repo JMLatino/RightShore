@@ -31,22 +31,32 @@
                 <div class="col-4 position-absolute"></div>
               </div>
             </div>
-            <svg id="coffee" class="position-absolute" width="259" height="180" viewBox="0 0 259 180" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M259 0H53L55.8218 23.0874C24.0777 28.8271 0 56.6017 0 90C0 127.555 30.4446 158 68 158C69.4425 158 70.8746 157.955 72.2948 157.867L75 180H238L259 0ZM57.7548 38.9028L70.4677 142.918C69.4854 142.972 68.496 143 67.5 143C38.5051 143 15 119.495 15 90.5C15 64.835 33.4162 43.4713 57.7548 38.9028Z"
-                fill="white" fill-opacity="0.7" />
-              <g v-if="coffeeServed">
-                <path d="M70 49H244L232.139 156H82.2489L70 49Z" fill="#3D2518" />
-                <mask id="mask0_0_1" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="70" y="48" width="174"
-                  height="108">
-                  <path d="M70.4828 48.812H244L232.171 156H82.6977L70.4828 48.812Z" fill="#D9D9D9" />
-                </mask>
-                <g mask="url(#mask0_0_1)">
-                  <rect x="44.4818" y="30.7705" width="214.376" height="36.0831" fill="#BB7A2F" />
-                </g>
-              </g>
-            </svg>
+            <div id="coffee-cup">
+              <div>
+                <svg id="espresso" class="position-absolute" width="259" height="180" viewBox="0 0 259 180" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M259 0H53L55.8218 23.0874C24.0777 28.8271 0 56.6017 0 90C0 127.555 30.4446 158 68 158C69.4425 158 70.8746 157.955 72.2948 157.867L75 180H238L259 0ZM57.7548 38.9028L70.4677 142.918C69.4854 142.972 68.496 143 67.5 143C38.5051 143 15 119.495 15 90.5C15 64.835 33.4162 43.4713 57.7548 38.9028Z"
+                    fill="white" fill-opacity="0.7" />
+                  <clipPath id="coffee">
+                    <path d="M70 49H244L232.139 156H82.2489L70 49Z" fill="#3D2518" />
+                  </clipPath>
+
+                  <g clip-path="url(#coffee)">
+                    <g class="fill">
+                      <path id="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
+    c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
+    c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z" />
+                    </g>
+                    <foreignObject x="100" y="100" width="115" height="50">
+                      <h4 id="recommendation" class="text-light text-center fw-bold" xmlns="http://www.w3.org/1999/xhtml">
+                      </h4>
+                    </foreignObject>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <!-- <img id="cappuccino" src="./assets/cappuccino.svg" alt="Cappuccino"> -->
           </div>
           <div class="base-machine">
           </div>
@@ -98,13 +108,18 @@ html {
   background: url('assets/coffeebeans.png');
 }
 
-svg#coffee {
+svg#espresso,
+#cappuccino {
   top: 40%;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 6.5%;
+}
+
+#cappuccino {
+  top: 30%;
 }
 
 .edge {
@@ -191,10 +206,39 @@ label,
 @keyframes zoom-in-zoom-out {
   0% {
     transform: scale(0.5, 0.5);
+    transform: translateY(-100%);
   }
 
   100% {
     transform: scale(1, 1);
+    transform: translateY(0);
   }
 }
+
+#coffee-cup .fill {
+  animation-name: coffeeFill;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.2, .6, .8, .4);
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+}
+
+#coffee-cup .animate {
+  animation-timing-function: linear;
+  animation-duration: 0.5s;
+  fill: #8C5926;
+  stroke: #3D2518;
+  stroke-width: 10px;
+}
+
+@keyframes coffeeFill {
+  0% {
+    transform: translate(100px, 150px);
+  }
+
+  100% {
+    transform: translate(0px, -15px);
+  }
+}
+
 </style>

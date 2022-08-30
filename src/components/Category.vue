@@ -1,13 +1,14 @@
 <template>
   <div class="accordion-item">
     <h2 class="accordion-header w-100 mb-2" :id="name">
-      <button class="accordion-button d-flex rounded w-100 px-3 py-1" :class="{ 'collapsed': name !== 0 }" type="button"
-        data-bs-toggle="collapse" :data-bs-target="'#collapse' + name" :aria-expanded="'false' ? name !== 0 : 'true'"
+      <h1 class="text-light">{{ toggleHeader }}</h1>
+      <button class="accordion-button d-flex rounded w-100 px-3 py-1" :class="{ 'completed': isFilledIn }" type="button"
+        data-bs-toggle="collapse" :data-bs-target="'#collapse' + name" :aria-expanded="'false'"
         :aria-controls="name">
         <div> 
-          {{ category.title }} {{ category.progress }}
+          {{ category.title }}
         </div>
-        <div class="ms-auto p-2">{{ preferences.answered(category.catIndex) }} / {{ category.entries.length }}
+        <div class="ms-auto p-2">{{ currentCount }} / {{ category.entries.length }}
         </div>
       </button>
     </h2>
@@ -26,8 +27,17 @@ export default {
   components: { Entry },
   props: ['category', 'name'],
   computed: {
+    currentCount() {
+      // return console.log(Object.keys(this.preferences.answers).length)
+      return this.preferences.answered(this.category.catIndex)
+      // return Object.keys(this.preferences.answers).length
+      // return this.preferences.answered(Object.keys(this.preferences.answers).length)
+    },
     isFilledIn() {
       return this.preferences.answered(this.category.catIndex) === this.category.entries.length
+    },
+    toggleHeader(){
+      return console.log(this.category.entries.length)
     }
   },
   setup() {
@@ -68,9 +78,10 @@ export default {
   background: none;
 }
 
-button.accordion-button {
+.accordion-button {
   width: 500px;
-  background: #17ABDA;
+  background: #FFF;
+  color: var(--black);
 }
 
 .accordion-item {
@@ -81,13 +92,8 @@ button.accordion-button {
     background:#ccc!important;
 }
 
-.accordion-button[aria-expanded="false"] {
-  background: #FFF;
-  color: var(--black);
-}
-
-.accordion-button[aria-expanded="true"] {
-  background: #17ABDA;
+.accordion-button.completed {
+  background: #87C4D6;
   color: white;
 }
 </style>

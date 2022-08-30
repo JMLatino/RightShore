@@ -1,25 +1,11 @@
 <template>
-  <button type="button" :disabled="!isComplete" class="btn btn-custom mb-3 px-4 py-1" @click="brewStrategy">
-    Brew your strategy
-  </button>
-  <!-- <button type="button" :disabled="isComplete" class="btn btn-custom mb-3 px-5 py-2" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="brewStrategy">
-    Brew your strategy
-  </button>   -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">{{ result.title }}</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          {{ result.description }}
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
+  <div class="col-12 d-flex justify-content-between">
+    <button type="button" :disabled="!isReset" class="btn btn-reset mb-3 px-4 py-1" @click="handleReset">
+      Reset
+    </button>
+    <button type="button" :disabled="isComplete" tabindex="0" class="btn btn-custom mb-3 px-4 py-1" @click="brewStrategy">
+      Brew your strategy
+    </button>
   </div>
 </template>
 
@@ -28,39 +14,27 @@ import { usePreferencesStore } from '../store/preferences'
 export default {
   data() {
     return {
-      coffeeResults: [
-        {
-          title: 'India',
-          description: 'This is India...',
-        },
-        {
-          title: 'Poland',
-          description: 'This is Poland...',
-        },
-        {
-          title: 'Netherlands',
-          description: 'This is the Netherlands...',
-        }
-      ],
-      result: {}
+      coffeeResults: ['Onshore', 'Nearshore', 'Offshore'],
     }
   },
   methods: {
+    handleReset() {
+      this.preferences.handleReset();
+    },
     brewStrategy() {
       window.scrollTo(0, document.body.scrollHeight);
-      // window.scrollTo({
-      //   top: 1000,
-      //   left: 0,
-      //   behavior: 'smooth'
-      // });
       this.preferences.toggleCoffee();
+      this.preferences.handleClick();
       const option = this.preferences.answers.q1;
-      this.result = this.coffeeResults[option];
+      document.getElementById('recommendation').innerHTML = this.coffeeResults[option]
     },
   },
   computed: {
     isComplete() {
       return Object.keys(this.preferences.answers).length === 24;
+    },
+    isReset() {
+      return Object.keys(this.preferences.answers).length
     }
   },
   setup() {
@@ -74,7 +48,8 @@ export default {
 </script>
 
 <style scoped>
-.btn-custom {
+.btn-custom,
+.btn-reset {
   color: white;
   font-size: 1.5em;
   border-radius: 13px;
@@ -87,4 +62,9 @@ export default {
   --bs-btn-active-bg: #17ABDA;
   --bs-btn-active-border-color: #0070AD;
 }
+
+.btn-reset {
+  background: #979797;
+}
+
 </style>
