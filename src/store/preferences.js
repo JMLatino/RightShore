@@ -43,9 +43,22 @@ export const usePreferencesStore = defineStore({
     //   document.getElementById('waveShape').classList.remove('animate');
     //   console.log('handleReset')
     // },
-    handleClick(){
-      document.getElementById('waveShape').classList.add('animate');
-    }    
+    handleClick() {
+      document.getElementById('pour-effects').classList.remove('invisible');
+      document.getElementById('pour-effects').classList.add('visible');
+      let pourElements = document.getElementsByClassName('pour-effect');
+      for (let i = 0; i < pourElements.length; i++) {
+        pourElements[i].classList.add('pour')
+        pourElements[i].classList.add('pour')
+        pourElements[i].classList.add('moved')
+      }
+
+      setTimeout(() => {
+        document.getElementById('coffee-content').classList.remove('invisible');
+        document.getElementById('coffee-content').classList.add('visible');
+        document.getElementById('coffee-content').classList.add('fill');
+      }, 1300)
+    }
   },
 })
 

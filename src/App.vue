@@ -25,8 +25,10 @@
             </div>
           </div>
           <div class="middle-machine col-11 position-relative">
-            <div class="pour"></div>
-            <div class="pour"></div>
+            <div id="pour-effects" class="invisible">
+              <div class="pour-effect"></div>
+              <div class="pour-effect"></div>
+            </div>
             <div class="outlets col-3 mx-auto position-relative">
               <div class="col-6 position-absolute top-100 start-50 translate-middle">
                 <div class="col-4 position-absolute"></div>
@@ -47,7 +49,7 @@
                   </mask>
 
                   <g mask="url(#coffee)">
-                    <g class="fill">
+                    <g id="coffee-content" class="invisible">
                       <path id="waveShape"
                         d="M395 300V2.5C395 2.5 394.02 2.4 393.203 2.4C393.203 2.4 351.553 0.1 327.053 0C302.553 0 260.74 2.4 260.74 2.4C240.65 3.5 211.25 4.2 208.637 4.3C205.37 4.2 176.46 3.5 156.37 2.4C156.37 2.4 114.23 0.1 89.73 0C65.23 0 23.09 2.4 23.09 2.4C3 3.5 -26.5633 4.2 -29.1767 4.3C-32.4433 4.2 -61.8433 3.5 -81.77 2.4C-81.77 2.4 -86.8333 2.1 -95 1.7V300H395Z" />
                     </g>
@@ -60,7 +62,6 @@
 
               </div>
             </div>
-            <!-- <img id="cappuccino" src="./assets/cappuccino.svg" alt="Cappuccino"> -->
           </div>
           <div class="base-machine">
           </div>
@@ -135,7 +136,7 @@ svg#espresso,
 }
 
 .top-machine {
-  z-index: 1;
+  z-index: 2;
   background: linear-gradient(180deg, #CCCCCC 0%, #A8A8A8 100%);
   height: 700px;
   border-bottom-left-radius: 8px;
@@ -201,7 +202,8 @@ svg#espresso,
 
 .table {
   height: 100px;
-  background: #724C1F;
+  background: url('assets/table.png');
+  /* background: #724C1F; */
 }
 
 p,
@@ -211,7 +213,13 @@ label,
 }
 
 #recommendation {
-  color: #d6d6d6;
+  z-index: 3;
+  /* color: white; */
+  /* color: #d6d6d6; */
+}
+
+#coffee-content {
+  z-index: 3;
 }
 
 @keyframes zoom-in-zoom-out {
@@ -226,32 +234,37 @@ label,
   }
 }
 
+.pour {
+  width: 14px;
+  height: 200px;
+  position: absolute;
+  top: 0%;
+  border-radius: 10px;
+  opacity: 0;
+  background: #8C5926;
+  animation: pourAction 6s cubic-bezier(1, .04, .74, .2) 1;
+  animation-timing-function: linear;
+  animation-duration: 4s;
+}
+
+.moved {
+  top: 20px;
+}
+
 #coffee-cup .fill {
-  animation-name: coffeeFill;
-  animation-iteration-count: infinite;
+  animation-name: fillAction;
+  animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(.2, .6, .8, .4);
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-fill-mode: forwards;
 }
 
 #coffee-cup #waveShape {
-  animation-name: animate;
+  animation-name: waveAction;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
   animation-duration: 1.2s;
   fill: #8C5926;
-}
-
-.pour {
-  width: 14px;
-  height: 277px;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  background: #8C5926;
-  animation-name: pourAction;  
-  animation-timing-function: linear;
-  animation-duration: 0.25s;
 }
 
 .pour:nth-child(1) {
@@ -264,12 +277,12 @@ label,
 
 #recommendation {
   color: #d6d6d6;
+  z-index: 4;
 }
 
-
-@keyframes coffeeFill {
+@keyframes fillAction {
   0% {
-    transform: translate(0, 150px);
+    transform: translate(0, 200px);
   }
 
   100% {
@@ -277,7 +290,7 @@ label,
   }
 }
 
-@keyframes animate {
+@keyframes waveAction {
   0% {
     transform: translate(-150px, 0);
   }
@@ -289,11 +302,22 @@ label,
 
 @keyframes pourAction {
   0% {
-    transform: translateY(-100%);
+    opacity: 1;
+    transform: translateY(-350px);
   }
 
+  40% {
+    height: 400px;
+  }
+  
+  80% {
+    height: 180px;
+  }
+  
   100% {
-    transform: translateY(0);
+    opacity: 1;
+    height: 20px;
+    transform: translateY(175px);
   }
 }
 </style>

@@ -3,7 +3,7 @@
     <button type="button" :disabled="!isReset" class="btn btn-reset mb-3 px-4 py-1" @click="handleReset">
       Reset
     </button>
-    <button type="button" :disabled="isComplete" tabindex="0" class="btn btn-custom mb-3 px-4 pt-0" @click="brewStrategy">
+    <button type="button" :disabled="!isComplete" tabindex="0" class="btn btn-custom mb-3 px-4 pt-0" @click="brewStrategy">
       Brew your strategy
     </button>
   </div>
@@ -23,23 +23,32 @@ export default {
       for (let i = 0; i < radioBtn.length; i++) {
         radioBtn[i].checked = false;
       }
-      // this.answers = {}
       document.getElementById('recommendation').innerHTML = "";
       document.getElementById('waveShape').classList.remove('animate');
-      // usePreferencesStore.$reset
-      console.log('this is the state', this.preferences.answers)
+      document.getElementById('coffee-content').classList.remove('visible');
+      document.getElementById('coffee-content').classList.add('invisible');
+      document.getElementById('coffee-content').classList.remove('fill');      
+
+      document.getElementById('pour-effects').classList.add('invisible');
+      document.getElementById('pour-effects').classList.remove('visible');
+      let pourElements = document.getElementsByClassName('pour-effect');
+      for (let i = 0; i < pourElements.length; i++) {
+        pourElements[i].classList.remove('pour')
+        pourElements[i].classList.remove('pour')
+        pourElements[i].classList.remove('moved')
+      }      
     },
     brewStrategy() {
       window.scrollTo(0, document.body.scrollHeight);
       this.preferences.toggleCoffee();
       this.preferences.handleClick();
       const option = this.preferences.answers.q1;
-      document.getElementById('recommendation').innerHTML = this.coffeeResults[option]
+      if(this.coffeeResults[option] !== undefined) document.getElementById('recommendation').innerHTML = this.coffeeResults[option]
     },
   },
   computed: {
     isComplete() {
-      return Object.keys(this.preferences.answers).length === 24;
+      return Object.keys(this.preferences.answers).length === 23;
     },
     isReset() {
       return Object.keys(this.preferences.answers).length
