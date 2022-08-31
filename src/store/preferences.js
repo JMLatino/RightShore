@@ -13,6 +13,7 @@ export const usePreferencesStore = defineStore({
     answered: (state) => {
       return (catIndex) => {
         const countAnswered = state.preferences[catIndex].entries.filter((element) => element.answered === true)
+        console.log('countAnswered', countAnswered.length)
         return countAnswered.length
       }
     },
@@ -30,16 +31,18 @@ export const usePreferencesStore = defineStore({
     toggleCoffee() {
       this.isCoffee = true;
     },
-    handleReset() {
-      const radioBtn = document.getElementsByClassName("btn-check")
-      for (let i = 0; i < radioBtn.length; i++) {
-        radioBtn[i].checked = false;
-      }
-      this.answers = {}
-      document.getElementById('recommendation').innerHTML = "";
-      document.getElementById('waveShape').classList.remove('animate');
-      console.log(this.answers)
-    },
+    // handleReset() {
+    //   const radioBtn = document.getElementsByClassName("btn-check")
+    //   for (let i = 0; i < radioBtn.length; i++) {
+    //     radioBtn[i].checked = false;
+    //   }
+    //   this.answers = {}
+    //   // this.preferences.answered(this.category.catIndex) 
+
+    //   document.getElementById('recommendation').innerHTML = "";
+    //   document.getElementById('waveShape').classList.remove('animate');
+    //   console.log('handleReset')
+    // },
     handleClick(){
       document.getElementById('waveShape').classList.add('animate');
     }    

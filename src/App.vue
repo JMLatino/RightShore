@@ -25,6 +25,8 @@
             </div>
           </div>
           <div class="middle-machine col-11 position-relative">
+            <div class="pour"></div>
+            <div class="pour"></div>
             <div class="outlets col-3 mx-auto position-relative">
               <div class="col-6 position-absolute top-100 start-50 translate-middle">
                 <div class="col-4 position-absolute"></div>
@@ -38,22 +40,24 @@
                   <path
                     d="M259 0H53L55.8218 23.0874C24.0777 28.8271 0 56.6017 0 90C0 127.555 30.4446 158 68 158C69.4425 158 70.8746 157.955 72.2948 157.867L75 180H238L259 0ZM57.7548 38.9028L70.4677 142.918C69.4854 142.972 68.496 143 67.5 143C38.5051 143 15 119.495 15 90.5C15 64.835 33.4162 43.4713 57.7548 38.9028Z"
                     fill="white" fill-opacity="0.7" />
-                  <clipPath id="coffee">
-                    <path d="M70 49H244L232.139 156H82.2489L70 49Z" fill="#3D2518" />
-                  </clipPath>
 
-                  <g clip-path="url(#coffee)">
+                  <mask id="coffee">
+                    <rect width="100%" height="100%" fill="black" />
+                    <path d="M70 49H244L232.139 156H82.2489L70 49Z" fill="white" />
+                  </mask>
+
+                  <g mask="url(#coffee)">
                     <g class="fill">
-                      <path id="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
-    c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
-    c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z" />
+                      <path id="waveShape"
+                        d="M395 300V2.5C395 2.5 394.02 2.4 393.203 2.4C393.203 2.4 351.553 0.1 327.053 0C302.553 0 260.74 2.4 260.74 2.4C240.65 3.5 211.25 4.2 208.637 4.3C205.37 4.2 176.46 3.5 156.37 2.4C156.37 2.4 114.23 0.1 89.73 0C65.23 0 23.09 2.4 23.09 2.4C3 3.5 -26.5633 4.2 -29.1767 4.3C-32.4433 4.2 -61.8433 3.5 -81.77 2.4C-81.77 2.4 -86.8333 2.1 -95 1.7V300H395Z" />
                     </g>
-                    <foreignObject x="100" y="100" width="115" height="50">
-                      <h4 id="recommendation" class="text-light text-center fw-bold" xmlns="http://www.w3.org/1999/xhtml">
-                      </h4>
+                    <foreignObject x="83" y="57" width="150" height="150">
+                      <p id="recommendation" class="text-center fw-bold" xmlns="http://www.w3.org/1999/xhtml">
+                      </p>
                     </foreignObject>
                   </g>
                 </svg>
+
               </div>
             </div>
             <!-- <img id="cappuccino" src="./assets/cappuccino.svg" alt="Cappuccino"> -->
@@ -97,15 +101,16 @@ html {
 }
 
 .lid {
-  height: 15px;
+  height: 12px;
   background: linear-gradient(180deg, #242424 0%, #2E2E2E 100%);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
 .beans {
-  height: 60px;
+  height: 40px;
   background: url('assets/coffeebeans.png');
+  background-position: 100% 100%;
 }
 
 svg#espresso,
@@ -130,6 +135,7 @@ svg#espresso,
 }
 
 .top-machine {
+  z-index: 1;
   background: linear-gradient(180deg, #CCCCCC 0%, #A8A8A8 100%);
   height: 700px;
   border-bottom-left-radius: 8px;
@@ -177,6 +183,7 @@ svg#espresso,
 }
 
 .outlets {
+  z-index: 1;
   height: 58px;
   background: #333333;
   border-radius: 0px 0px 8px 8px;
@@ -203,6 +210,10 @@ label,
   color: white;
 }
 
+#recommendation {
+  color: #d6d6d6;
+}
+
 @keyframes zoom-in-zoom-out {
   0% {
     transform: scale(0.5, 0.5);
@@ -219,26 +230,70 @@ label,
   animation-name: coffeeFill;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(.2, .6, .8, .4);
-  animation-duration: 10s;
+  animation-duration: 5s;
   animation-fill-mode: forwards;
 }
 
-#coffee-cup .animate {
-  animation-timing-function: linear;
-  animation-duration: 0.5s;
+#coffee-cup #waveShape {
+  animation-name: animate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-duration: 1.2s;
   fill: #8C5926;
-  stroke: #3D2518;
-  stroke-width: 10px;
 }
+
+.pour {
+  width: 14px;
+  height: 277px;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  background: #8C5926;
+  animation-name: pourAction;  
+  animation-timing-function: linear;
+  animation-duration: 0.25s;
+}
+
+.pour:nth-child(1) {
+  left: 45.1%;
+}
+
+.pour:nth-child(2) {
+  left: 53.2%;
+}
+
+#recommendation {
+  color: #d6d6d6;
+}
+
 
 @keyframes coffeeFill {
   0% {
-    transform: translate(100px, 150px);
+    transform: translate(0, 150px);
   }
 
   100% {
-    transform: translate(0px, -15px);
+    transform: translate(0, -15px);
   }
 }
 
+@keyframes animate {
+  0% {
+    transform: translate(-150px, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes pourAction {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
 </style>

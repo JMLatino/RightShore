@@ -25,7 +25,7 @@ export default {
     },
     markChecked(e) {
       document.getElementById(e.target.id).checked = true;
-      console.log(e.target);
+      // console.log(e.target);
     }
   },
   setup() {

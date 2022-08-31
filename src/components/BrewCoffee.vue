@@ -3,7 +3,7 @@
     <button type="button" :disabled="!isReset" class="btn btn-reset mb-3 px-4 py-1" @click="handleReset">
       Reset
     </button>
-    <button type="button" :disabled="!isComplete" tabindex="0" class="btn btn-custom mb-3 px-4 py-1" @click="brewStrategy">
+    <button type="button" :disabled="isComplete" tabindex="0" class="btn btn-custom mb-3 px-4 pt-0" @click="brewStrategy">
       Brew your strategy
     </button>
   </div>
@@ -14,7 +14,7 @@ import { usePreferencesStore } from '../store/preferences'
 export default {
   data() {
     return {
-      coffeeResults: ['Onshore', 'Nearshore', 'Offshore'],
+      coffeeResults: ['Onshore Heavy with some Offshore presence', 'Nearshore Heavy with some Offshore presence', 'Offshore Heavy with some Offshore presence'],
     }
   },
   methods: {
@@ -23,10 +23,11 @@ export default {
       for (let i = 0; i < radioBtn.length; i++) {
         radioBtn[i].checked = false;
       }
-      this.answers = {}
+      // this.answers = {}
       document.getElementById('recommendation').innerHTML = "";
       document.getElementById('waveShape').classList.remove('animate');
-      console.log(this.answers)
+      // usePreferencesStore.$reset
+      console.log('this is the state', this.preferences.answers)
     },
     brewStrategy() {
       window.scrollTo(0, document.body.scrollHeight);

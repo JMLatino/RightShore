@@ -108,37 +108,32 @@
     "entries": [
       {
         "id": 18,
-        "question" : "Local core system or a R&D project",
-		    "answers"  : ["Yes", "No"]
-      },
-      {
-        "id": 19,
         "question" : "Required language",
 		    "answers"  : ["Dutch", "English"]
       },
       {
-        "id": 20,
-        "question" : "Type the documentation language",
+        "id": 19,
+        "question" : "Documentation language",
 		    "answers"  : ["Dutch", "English"]
       },
       {
-        "id": 21,
+        "id": 20,
         "question" : "Data requirement standards",
 		    "answers"  : ["National", "European", "International"]
       },
       {
-        "id": 22,
+        "id": 21,
         "question" : "Compliance and Regulation standards",
 		    "answers"  : ["National", "European", "International"]
       },
       {
-        "id": 23,
-        "question" : "Type your technology type",
+        "id": 22,
+        "question" : "Technology type",
 		    "answers"  : ["Legacy", "New"]
       },
       {
-        "id": 24,
-        "question": "Type your tech category",
+        "id": 23,
+        "question": "Tech category",
         "answers": ["Data Science", "Data Engineering", "Fullstack"]
       }
     ]

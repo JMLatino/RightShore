@@ -24,16 +24,17 @@ import Entry from './Entry.vue'
 import { usePreferencesStore } from '../store/preferences'
 export default {
   components: { Entry },
+  data() {
+    return {
+    }
+  },
   props: ['category', 'name'],
   computed: {
     currentCount() {
-      // return console.log(Object.keys(this.preferences.answers).length)
-      return this.preferences.answered(this.category.catIndex)
-      // return Object.keys(this.preferences.answers).length
-      // return this.preferences.answered(Object.keys(this.preferences.answers).length)
+      return this.preferences.answered(this.category.catIndex);
+      // return Object.keys(this.preferences.answers).length;
     },
     isFilledIn() {
-      console.log('isfilledin ', this.preferences.answered(this.category.catIndex) === this.category.entries.length)
       return this.preferences.answered(this.category.catIndex) === this.category.entries.length
     }
   },
