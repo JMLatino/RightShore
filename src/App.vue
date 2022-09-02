@@ -53,16 +53,16 @@
                       <path id="waveShape"
                         d="M395 300V2.5C395 2.5 394.02 2.4 393.203 2.4C393.203 2.4 351.553 0.1 327.053 0C302.553 0 260.74 2.4 260.74 2.4C240.65 3.5 211.25 4.2 208.637 4.3C205.37 4.2 176.46 3.5 156.37 2.4C156.37 2.4 114.23 0.1 89.73 0C65.23 0 23.09 2.4 23.09 2.4C3 3.5 -26.5633 4.2 -29.1767 4.3C-32.4433 4.2 -61.8433 3.5 -81.77 2.4C-81.77 2.4 -86.8333 2.1 -95 1.7V300H395Z" />
                     </g>
-                    <foreignObject x="83" y="57" width="150" height="150">
+                    <foreignObject x="83" y="57" width="150" height="150" ref="recommendation">
                       <p id="recommendation" class="text-center fw-bold" xmlns="http://www.w3.org/1999/xhtml">
                       </p>
                     </foreignObject>
                   </g>
                 </svg>
-
               </div>
             </div>
           </div>
+
           <div class="base-machine">
           </div>
         </div>
@@ -74,7 +74,6 @@
 <script setup>
 import Questions from './components/Questions.vue';
 import BrewCoffee from './components/BrewCoffee.vue';
-
 </script>
 
 <style>
@@ -203,7 +202,6 @@ svg#espresso,
 .table {
   height: 100px;
   background: url('assets/table.png');
-  /* background: #724C1F; */
 }
 
 p,
@@ -212,36 +210,18 @@ label,
   color: white;
 }
 
-#recommendation {
-  z-index: 3;
-  /* color: white; */
-  /* color: #d6d6d6; */
-}
 
 #coffee-content {
   z-index: 3;
 }
 
-@keyframes zoom-in-zoom-out {
-  0% {
-    transform: scale(0.5, 0.5);
-    transform: translateY(-100%);
-  }
-
-  100% {
-    transform: scale(1, 1);
-    transform: translateY(0);
-  }
-}
-
 .pour {
-  width: 14px;
   height: 200px;
   position: absolute;
   top: 0%;
   border-radius: 10px;
   opacity: 0;
-  background: #8C5926;
+  background: #3D2518;
   animation: pourAction 6s cubic-bezier(1, .04, .74, .2) 1;
   animation-timing-function: linear;
   animation-duration: 4s;
@@ -255,24 +235,29 @@ label,
   animation-name: fillAction;
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(.2, .6, .8, .4);
-  animation-duration: 3s;
+  animation-duration: 3.3s;
   animation-fill-mode: forwards;
 }
 
 #coffee-cup #waveShape {
   animation-name: waveAction;
   animation-iteration-count: infinite;
-  animation-timing-function: ease;
-  animation-duration: 1.2s;
-  fill: #8C5926;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.6s;
+  fill: #3D2518;
+  stroke: #8C5926;
+  stroke-width: 10px;  
 }
 
 .pour:nth-child(1) {
   left: 45.1%;
+  width: 14px;
 }
 
 .pour:nth-child(2) {
-  left: 53.2%;
+  left: 53.5%;
+  background: #d6d6d6;
+  width: 10px;
 }
 
 #recommendation {
@@ -311,7 +296,7 @@ label,
   }
   
   80% {
-    height: 180px;
+    /* height: 180px; */
   }
   
   100% {
@@ -320,4 +305,17 @@ label,
     transform: translateY(175px);
   }
 }
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(0.5, 0.5);
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: scale(1, 1);
+    transform: translateY(0);
+  }
+}
+
 </style>

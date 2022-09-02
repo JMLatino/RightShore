@@ -6,41 +6,47 @@
     <button type="button" :disabled="!isComplete" tabindex="0" class="btn btn-custom mb-3 px-4 pt-0" @click="brewStrategy">
       Brew your strategy
     </button>
+    <!-- {{ this.preferences.data  }} -->
   </div>
 </template>
 
 <script>
-import { usePreferencesStore } from '../store/preferences'
-export default {
-  data() {
-    return {
-      coffeeResults: ['Onshore Heavy with some Offshore presence', 'Nearshore Heavy with some Offshore presence', 'Offshore Heavy with some Offshore presence'],
-    }
-  },
-  methods: {
-    handleReset() {
-      const radioBtn = document.getElementsByClassName("btn-check")
+  import { usePreferencesStore } from '../store/preferences'
+  export default {
+    data() {
+      return {
+        coffeeResults: ['Onshore Heavy <span class="d-block">with</span> Offshore presence', 'Nearshore Heavy <span class="d-block">with</span> Offshore presence', 'Offshore Heavy <span class="d-block">with</span> Onshore presence'],
+      }
+    },
+    methods: {
+      handleReset() {
+        const radioBtn = document.getElementsByClassName("btn-check")
       for (let i = 0; i < radioBtn.length; i++) {
         radioBtn[i].checked = false;
       }
-      document.getElementById('recommendation').innerHTML = "";
-      document.getElementById('waveShape').classList.remove('animate');
-      document.getElementById('coffee-content').classList.remove('visible');
-      document.getElementById('coffee-content').classList.add('invisible');
-      document.getElementById('coffee-content').classList.remove('fill');      
+      document.getElementById('recommendation').innerHTML = ""
+      document.getElementById('waveShape').classList.remove('animate')
+      document.getElementById('coffee-content').classList.remove('visible')
+      document.getElementById('coffee-content').classList.add('invisible')
+      document.getElementById('coffee-content').classList.remove('fill')      
 
-      document.getElementById('pour-effects').classList.add('invisible');
-      document.getElementById('pour-effects').classList.remove('visible');
-      let pourElements = document.getElementsByClassName('pour-effect');
+      document.getElementById('pour-effects').classList.add('invisible')
+      document.getElementById('pour-effects').classList.remove('visible')
+      let pourElements = document.getElementsByClassName('pour-effect')
       for (let i = 0; i < pourElements.length; i++) {
         pourElements[i].classList.remove('pour')
-        pourElements[i].classList.remove('pour')
+        // pourElements[i].classList.remove('pour')
         pourElements[i].classList.remove('moved')
-      }      
+      }  
+
+      // for (let i = 0; i < document.getElementsByClassName('accordion-button').length; i++) {
+      //   document.getElementsByClassName('accordion-button')[i].classList.remove('completed')
+      // }       
+      this.preferences.answers = {}
+      this.preferences.isReset = !this.preferences.isReset            
     },
     brewStrategy() {
       window.scrollTo(0, document.body.scrollHeight);
-      this.preferences.toggleCoffee();
       this.preferences.handleClick();
       const option = this.preferences.answers.q1;
       if(this.coffeeResults[option] !== undefined) document.getElementById('recommendation').innerHTML = this.coffeeResults[option]
@@ -79,7 +85,6 @@ export default {
   --bs-btn-active-bg: #17ABDA;
   --bs-btn-active-border-color: #0070AD;
 }
-
 .btn-reset {
   background: #979797;
 }

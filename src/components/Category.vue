@@ -1,5 +1,8 @@
 <template>
   <div class="accordion-item">
+    <!-- <div class="text-light">
+      {{ Object.keys(preferences.answers).length}}
+    </div> -->
     <h2 class="accordion-header w-100 mb-2" :id="name">
       <button class="accordion-button d-flex rounded w-100 px-3 py-1" :class="{ 'completed': isFilledIn }" type="button"
         data-bs-toggle="collapse" :data-bs-target="'#collapse' + name" :aria-expanded="'false'"
@@ -24,15 +27,13 @@ import Entry from './Entry.vue'
 import { usePreferencesStore } from '../store/preferences'
 export default {
   components: { Entry },
-  data() {
-    return {
-    }
-  },
   props: ['category', 'name'],
   computed: {
     currentCount() {
       return this.preferences.answered(this.category.catIndex);
-      // return Object.keys(this.preferences.answers).length;
+    },
+    currentAnswers() {
+      return this.preferences.answers
     },
     isFilledIn() {
       return this.preferences.answered(this.category.catIndex) === this.category.entries.length
