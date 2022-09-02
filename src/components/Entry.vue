@@ -18,15 +18,38 @@
 import { usePreferencesStore } from '../store/preferences'
 export default {
   props: ['entry'],
+  data() {
+    return {
+      arr: []
+    }
+  },
   methods: {
     setAnswer(index, answer) {
       // e.target.checked = true;
       this.preferences.setPreference({ index, answer })
+
+      // localStorage.setItem('checkedBtn', document.getElementById('1-0'));
+    },
+    loadFn() {
+      const res = localStorage.getItem("checkedBtn")
+
+      const radioBtn = document.getElementsByClassName("btn-check")
+      
+      for (let i = 0; i < radioBtn.length; i++) {
+        radioBtn[i].checked = false;
+        
+      }
+
+      document.getElementById(`${res}`).checked = true;
+      
     },
     markChecked(e) {
       document.getElementById(e.target.id).checked = true;
-      // console.log(e.target);
+      localStorage.setItem('checkedBtn', e.target.id);
     }
+  },
+  mounted() {
+    this.loadFn();
   },
   setup() {
     const preferences = usePreferencesStore()
