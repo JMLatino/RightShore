@@ -32,7 +32,7 @@ const designPrinciples = {
             value: ''
         }
     ],
-    
+
 };
 
 const projectCharacteristics = {

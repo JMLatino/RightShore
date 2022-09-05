@@ -8,6 +8,4 @@ const app = createApp(App)
 
 pinia.use(piniaPluginPersistedstate)
 app.use(pinia)
-// import './assets/main.css'
-
 app.mount('#app')
