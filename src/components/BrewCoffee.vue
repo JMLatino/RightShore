@@ -26,9 +26,9 @@ export default {
   data() {
     return {
       coffeeResults: [
-        'Onshore Heavy <span class="d-block">with</span> Offshore presence',
-        'Nearshore Heavy <span class="d-block">with</span> Offshore presence',
-        'Offshore Heavy <span class="d-block">with</span> Onshore presence',
+        "Onshore Heavy <div>with</div> Offshore presence",
+        "Nearshore Heavy <div>with</div> Offshore presence",
+        "Offshore Heavy <div>with</div> Onshore presence",
       ],
     };
   },
