@@ -21,9 +21,6 @@ export const usePreferencesStore = defineStore({
     setPreference(locator = { index: Number, answer: String }) {
       const { index, answer } = locator;
       this.answers[`q${index}`] = answer;
-      console.log('answer', this.answers)
-      localStorage.setItem('answers', JSON.stringify(this.answers));
-
       this.preferences.forEach((category) => {
         category.entries.forEach((element) => {
           if (element.id == index) element.answered = true;
@@ -39,7 +36,6 @@ export const usePreferencesStore = defineStore({
       let pourElements = document.getElementsByClassName('pour-effect');
       for (let i = 0; i < pourElements.length; i++) {
         pourElements[i].classList.add('pour')
-        pourElements[i].classList.add('pour')
         pourElements[i].classList.add('moved')
       }
       setTimeout(() => {
@@ -49,6 +45,7 @@ export const usePreferencesStore = defineStore({
       }, 1300)
     }
   },
+  persist: true,
 })
 
 if (import.meta.hot) {

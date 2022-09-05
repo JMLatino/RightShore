@@ -3,7 +3,6 @@
     <span class="col">
       <label for="time-to-market" class="form-label">{{ entry.question }}</label>
     </span>
-
     <div class="btn-group d-flex justify-content-end" role="group" aria-label="Basic radio toggle button group">
       <template v-for="(answer, answerId) in entry.answers" :key="answer">
         <input type="radio" class="btn-check" :name="`btnradio-q${entry.id}`" :id="`q${entry.id}-${answerId}`"
@@ -26,25 +25,18 @@ export default {
   },
   methods: {
     setAnswer(index, answer) {
-      // e.target.checked = true;
       this.preferences.setPreference({ index, answer })
-      // console.log({ index, answer })
-      // localStorage.setItem('checkedBtn', document.getElementById('1-0'));
-    },
-    keepSelection() {
-      const res = JSON.parse(localStorage.getItem("answers"))
-
-      for (const [key, value] of Object.entries(res)) {
-        document.getElementById(`${key}-${value}`).checked = true;
-      }
-
     },
     markChecked(e) {
       document.getElementById(e.target.id).checked = true;
     }
   },
   mounted() {
-    this.keepSelection();
+    () => {
+      for (const [question, answer] of Object.entries(JSON.parse(localStorage.getItem("preferences")).answers)) {
+        document.getElementById(`${question}-${answer}`).checked = true;
+      }
+    }
   },
   setup() {
     const preferences = usePreferencesStore()
@@ -71,11 +63,10 @@ label.btn:not(label.btn:last-child) {
 }
 
 .btn-active {
-  color: white;
+  color: #FFF;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #17ABDA;
   --bs-btn-active-color: white;
-  /* --bs-btn-active-bg: #17ABDA; */
   --bs-btn-active-border-color: #0070AD;
 }
 </style>

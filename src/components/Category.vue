@@ -1,13 +1,9 @@
 <template>
   <div class="accordion-item">
-    <!-- <div class="text-light">
-      {{ Object.keys(preferences.answers).length}}
-    </div> -->
     <h2 class="accordion-header w-100 mb-2" :id="name">
       <button class="accordion-button d-flex rounded w-100 px-3 py-1" :class="{ 'completed': isFilledIn }" type="button"
-        data-bs-toggle="collapse" :data-bs-target="'#collapse' + name" :aria-expanded="'false'"
-        :aria-controls="name">
-        <div> 
+        data-bs-toggle="collapse" :data-bs-target="'#collapse' + name" :aria-expanded="'false'" :aria-controls="name">
+        <div>
           {{ category.title }}
         </div>
         <div class="ms-auto p-2">{{ currentCount }} / {{ category.entries.length }}
@@ -31,9 +27,6 @@ export default {
   computed: {
     currentCount() {
       return this.preferences.answered(this.category.catIndex);
-    },
-    currentAnswers() {
-      return this.preferences.answers
     },
     isFilledIn() {
       return this.preferences.answered(this.category.catIndex) === this.category.entries.length
@@ -79,7 +72,7 @@ export default {
 
 .accordion-button {
   width: 500px;
-  background: #FFF;
+  background: #FFFFFF;
   color: var(--black);
 }
 
@@ -88,16 +81,16 @@ export default {
 }
 
 .accordion-collapse.collapsed {
-    background:#ccc!important;
+  background: #ccc !important;
 }
 
 .accordion-button.completed {
-  background: #87C4D6;
-  color: white;
-}
-.accordion-button.reset {
-  background: #FFF;
-  color: var(--black);
+  background: var(--lightBlue);
+  color: #FFFFFF;
 }
 
+.accordion-button.reset {
+  background: #FFFFFF;
+  color: var(--black);
+}
 </style>

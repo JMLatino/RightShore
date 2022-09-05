@@ -37,17 +37,15 @@
             </div>
             <div id="coffee-cup">
               <div>
-                <svg id="espresso" class="position-absolute" width="259" height="180" viewBox="0 0 259 180" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                <svg id="espresso" class="position-absolute mx-auto" width="259" height="180" viewBox="0 0 259 180"
+                  fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M259 0H53L55.8218 23.0874C24.0777 28.8271 0 56.6017 0 90C0 127.555 30.4446 158 68 158C69.4425 158 70.8746 157.955 72.2948 157.867L75 180H238L259 0ZM57.7548 38.9028L70.4677 142.918C69.4854 142.972 68.496 143 67.5 143C38.5051 143 15 119.495 15 90.5C15 64.835 33.4162 43.4713 57.7548 38.9028Z"
                     fill="white" fill-opacity="0.7" />
-
                   <mask id="coffee">
                     <rect width="100%" height="100%" fill="black" />
                     <path d="M70 49H244L232.139 156H82.2489L70 49Z" fill="white" />
                   </mask>
-
                   <g mask="url(#coffee)">
                     <g id="coffee-content" class="invisible">
                       <path id="waveShape"
@@ -62,7 +60,6 @@
               </div>
             </div>
           </div>
-
           <div class="base-machine">
           </div>
         </div>
@@ -79,6 +76,9 @@ import BrewCoffee from './components/BrewCoffee.vue';
 <style>
 :root {
   --black: #333333;
+  --darkGrey: #d6d6d6;
+  --lightGrey: #BDBDBD;
+  --lightBlue: #87C4D6;
 }
 
 body {
@@ -116,9 +116,6 @@ html {
 svg#espresso,
 #cappuccino {
   top: 40%;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
   left: 0;
   right: 6.5%;
 }
@@ -135,15 +132,15 @@ svg#espresso,
 }
 
 .top-machine {
+  height: 700px;
   z-index: 2;
   background: linear-gradient(180deg, #CCCCCC 0%, #A8A8A8 100%);
-  height: 700px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
 
 .top-machine-inner {
-  width: 85% !important;
+  width: 85%;
 }
 
 .logos {
@@ -151,16 +148,16 @@ svg#espresso,
 }
 
 .interface {
-  background: var(--black);
   height: 75%;
+  background: var(--black);
   z-index: 1;
 }
 
 .interface-inner {
   height: 100%;
   z-index: -1;
-  overflow-y: hidden !important;
-  overflow-y: scroll !important;
+  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 .interface-inner::-webkit-scrollbar {
@@ -177,21 +174,21 @@ svg#espresso,
 }
 
 .base-machine {
-  background: #BDBDBD;
+  background: var(--lightGrey);
   height: 125px;
   border-radius: 8px 8px 0px 0px;
 }
 
 .outlets {
-  z-index: 1;
   height: 58px;
-  background: #333333;
+  z-index: 1;
+  background: var(--black);
   border-radius: 0px 0px 8px 8px;
 }
 
 .outlets>div>div {
   height: 19px;
-  background: #BDBDBD;
+  background: var(--lightGrey);
 }
 
 .outlets>div>div:nth-child(2) {
@@ -219,12 +216,14 @@ label,
   height: 200px;
   position: absolute;
   top: 0%;
-  border-radius: 10px;
+  border-radius: 5px 10px 10px 10px;
   opacity: 0;
   background: #3D2518;
-  animation: pourAction 6s cubic-bezier(1, .04, .74, .2) 1;
+  animation: pourAction cubic-bezier(1, .04, .74, .2), secondAction;
   animation-timing-function: linear;
-  animation-duration: 4s;
+  animation-duration: 4s, 1s;
+  animation-delay: 0ms, 4000ms;
+  animation-iteration-count: 1, 1;
 }
 
 .moved {
@@ -246,8 +245,9 @@ label,
   animation-duration: 0.6s;
   fill: #3D2518;
   stroke: #8C5926;
-  stroke-width: 10px;  
+  stroke-width: 10px;
 }
+
 
 .pour:nth-child(1) {
   left: 45.1%;
@@ -256,12 +256,12 @@ label,
 
 .pour:nth-child(2) {
   left: 53.5%;
-  background: #d6d6d6;
-  width: 10px;
+  background: var(--darkGrey);
+  width: 9px;
 }
 
 #recommendation {
-  color: #d6d6d6;
+  color: var(--darkGrey);
   z-index: 4;
 }
 
@@ -288,21 +288,29 @@ label,
 @keyframes pourAction {
   0% {
     opacity: 1;
-    transform: translateY(-350px);
+    transform: translateY(-360px);
   }
 
   40% {
-    height: 400px;
+    height: 350px;
+    scale: 1.2 1;
+    translate: 0 50px;
   }
-  
-  80% {
-    /* height: 180px; */
-  }
-  
+
   100% {
     opacity: 1;
     height: 20px;
     transform: translateY(175px);
+  }
+}
+
+@keyframes secondAction {
+  from {
+    rotate: 45deg;
+  }
+
+  to {
+    rotate: 45deg;
   }
 }
 
@@ -317,5 +325,4 @@ label,
     transform: translateY(0);
   }
 }
-
 </style>
