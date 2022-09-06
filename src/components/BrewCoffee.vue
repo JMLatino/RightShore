@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { usePreferencesStore } from "../store/preferences";
+import { usePreferencesStore } from "@/store/preferences";
 export default {
   data() {
     return {
@@ -56,7 +56,8 @@ export default {
         pourElements[i].classList.remove("moved");
       }
       window.localStorage.removeItem("preferences");
-      // this.preferences.answers = {}
+      this.preferences.clearForm();
+
     },
     brewStrategy() {
       window.scrollTo(0, document.body.scrollHeight);
