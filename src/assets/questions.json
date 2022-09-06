@@ -103,7 +103,7 @@
     ]
   },
   {
-    "title": "Verification Questions",
+    "title": "Miscellaneous Questions",
     "catIndex": "3",
     "entries": [
       {
@@ -134,7 +134,50 @@
       {
         "id": 23,
         "question": "Tech category",
-        "answers": ["Data Science", "Data Engineering", "Fullstack"]
+        "answers": [
+          "UX Design",
+          "Mobile Development",
+          "Data Engineering",
+          "Data Insights",
+          "Service & Configuration Management",
+          "Digital Marketing Automation",
+          "Robotic Process Automation",
+          "Business Process Automation",
+          "Cloud Apps Engineering",
+          "Hyper Scalers",
+          "Digital Workplace",
+          "API",
+          "Streaming",
+          "Solution Architecture",
+          "Test Automation",
+          "DevOps",
+          "Application Modernisation",
+          "Machine Learning",
+          "Low Coding Application Platform",
+          "Core Banking",
+          "CRM",
+          "Payments",
+          "ERP",
+          "Cyber Security",
+          "Banking & Capital Markets",
+          "Enterprise Content Management",
+          "Cloud Platform Engineering",
+          "Digital Work Place",
+          "Green Coding",
+          "Distribute Ledger",
+          "Banking & Capital Market",
+          "Domain Knowledge IB",
+          "Business Project Management",
+          "Project Management Office",
+          "Agile Coaches",
+          "Architecture & Delivery Management",
+          "Big Data & Cloud",
+          "Classic BI",
+          "Data Visualisation",
+          "Cloud Architecture",
+          "MS Dynamics",
+          "Salesforce"
+       ]
       }
     ]
   }

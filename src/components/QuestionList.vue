@@ -1,5 +1,5 @@
 <template>
-  <div id="accordionExample" class="accordion col-12 text-light">
+  <div id="accordion-group" class="accordion col-12 text-light">
     <CategoryList
       v-for="(c, n) in preferences.data"
       :key="c.title"

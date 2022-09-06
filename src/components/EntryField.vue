@@ -45,6 +45,16 @@ export default {
     },
     markChecked(e) {
       document.getElementById(e.target.id).checked = true;
+      if (e.target.id === "q23-0") {
+        this.preferences.isModal = true;
+        document
+          .getElementById("q23-0")
+          .setAttribute("data-bs-toggle", "modal");
+        document
+          .getElementById("q23-0")
+          .setAttribute("data-bs-target", "#exampleModal");
+        console.log("yeaaah clicked");
+      }
     },
   },
   mounted() {

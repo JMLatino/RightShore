@@ -104,11 +104,13 @@
       </div>
       <div class="table mb-0"></div>
     </div>
+    <ModalView />
   </main>
 </template>
 <script setup>
 import QuestionList from "./components/QuestionList.vue";
 import BrewCoffee from "./components/BrewCoffee.vue";
+import ModalView from "./components/ModalView.vue";
 </script>
 
 <style>

@@ -7,6 +7,7 @@ export const usePreferencesStore = defineStore({
     preferences: questions,
     answers: {},
     isCoffee: false,
+    isModal: false,
   }),
   getters: {
     data: (state) => state.preferences,
@@ -17,6 +18,9 @@ export const usePreferencesStore = defineStore({
         );
         return countAnswered.length;
       };
+    },
+    isFilledIn: (val) => {
+      return console.log(val);
     },
   },
   actions: {
@@ -31,6 +35,9 @@ export const usePreferencesStore = defineStore({
     },
     toggleCoffee() {
       this.isCoffee = true;
+    },
+    toggleModal() {
+      this.isModal = true;
     },
     handleClick() {
       document.getElementById("pour-effects").classList.remove("invisible");

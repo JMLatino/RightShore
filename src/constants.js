@@ -1,105 +1,102 @@
-
 const designPrinciples = {
-    title: 'Design Principles',
-    progress: 0,
-    entries: [
-        {
-            label: 'Time to market',
-            value: ''
-        },
-        {
-            label: 'Cost Consideration',
-            value: ''
-        },
-        {
-            label: 'Quality',
-            value: ''
-        },
-        {
-            label: 'Process Maturity',
-            value: ''
-        },
-        {
-            label: 'Innovative delivery',
-            value: ''
-        },
-        {
-            label: 'Sustainability',
-            value: ''
-        },
-        {
-            label: 'Governance',
-            value: ''
-        }
-    ],
-
+  title: "Design Principles",
+  progress: 0,
+  entries: [
+    {
+      label: "Time to market",
+      value: "",
+    },
+    {
+      label: "Cost Consideration",
+      value: "",
+    },
+    {
+      label: "Quality",
+      value: "",
+    },
+    {
+      label: "Process Maturity",
+      value: "",
+    },
+    {
+      label: "Innovative delivery",
+      value: "",
+    },
+    {
+      label: "Sustainability",
+      value: "",
+    },
+    {
+      label: "Governance",
+      value: "",
+    },
+  ],
 };
 
 const projectCharacteristics = {
-    title: 'Project Characteristics',
-    progress: 0,
-    entries: [
-        {
-            label: 'Size',
-            value: ''
-        },
-        {
-            label: 'Project Timeline',
-            value: ''
-        },
-        {
-            label: 'CIA Ratings',
-            value: ''
-        },
-        {
-            label: 'Compliance/regulatory',
-            value: ''
-        },
-        {
-            label: 'Domain Intense',
-            value: ''
-        },
-        {
-            label: 'New age technology',
-            value: ''
-        },
-        {
-            label: 'Packaged Solution',
-            value: ''
-        },
-        {
-            label: 'Legacy Dominance',
-            value: ''
-        }
-    ],
+  title: "Project Characteristics",
+  progress: 0,
+  entries: [
+    {
+      label: "Size",
+      value: "",
+    },
+    {
+      label: "Project Timeline",
+      value: "",
+    },
+    {
+      label: "CIA Ratings",
+      value: "",
+    },
+    {
+      label: "Compliance/regulatory",
+      value: "",
+    },
+    {
+      label: "Domain Intense",
+      value: "",
+    },
+    {
+      label: "New age technology",
+      value: "",
+    },
+    {
+      label: "Packaged Solution",
+      value: "",
+    },
+    {
+      label: "Legacy Dominance",
+      value: "",
+    },
+  ],
 };
 
 const sourcingRequirement = {
-    title: 'Sourcing Requirement',
-    progress: 0,
-    entries: [
-        {
-            label: 'Complexity',
-            value: ''
-        },
-        {
-            label: 'Ease of collaboration',
-            value: ''
-        },
-        {
-            label: 'Cultural Alignment',
-            value: ''
-        },
-        {
-            label: 'Incumbent Transition',
-            value: ''
-        }
-    ],
+  title: "Sourcing Requirement",
+  progress: 0,
+  entries: [
+    {
+      label: "Complexity",
+      value: "",
+    },
+    {
+      label: "Ease of collaboration",
+      value: "",
+    },
+    {
+      label: "Cultural Alignment",
+      value: "",
+    },
+    {
+      label: "Incumbent Transition",
+      value: "",
+    },
+  ],
 };
 
 export const categories = {
-    designPrinciples,
-    projectCharacteristics,
-    sourcingRequirement
+  designPrinciples,
+  projectCharacteristics,
+  sourcingRequirement,
 };
-
