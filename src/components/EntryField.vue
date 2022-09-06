@@ -20,9 +20,24 @@
           @click="setAnswer(entry.id, answerId)"
           @change="(e) => markChecked(e)"
         />
-        <label :for="`q${entry.id}-${answerId}`" class="btn btn-active p-2">
+        <label
+          v-if="typeof answer === 'string'"
+          :for="`q${entry.id}-${answerId}`"
+          class="btn btn-active p-2"
+        >
           {{ answer }}
         </label>
+        <span v-else>
+          <label
+            type="label"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Categories
+          </label>
+        </span>
+        <!-- <span v-if="typeof answer !== Object">test</span> -->
       </template>
     </div>
   </div>
@@ -47,13 +62,13 @@ export default {
       document.getElementById(e.target.id).checked = true;
       if (e.target.id === "q23-0") {
         this.preferences.isModal = true;
-        document
-          .getElementById("q23-0")
-          .setAttribute("data-bs-toggle", "modal");
-        document
-          .getElementById("q23-0")
-          .setAttribute("data-bs-target", "#exampleModal");
-        console.log("yeaaah clicked");
+        // document
+        //   .getElementById("q23-0")
+        //   .setAttribute("data-bs-toggle", "modal");
+        // document
+        //   .getElementById("q23-0")
+        //   .setAttribute("data-bs-target", "#exampleModal");
+        // console.log("yeaaah clicked");
       }
     },
   },

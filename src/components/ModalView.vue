@@ -6,7 +6,7 @@
       data-bs-toggle="modal"
       data-bs-target="#exampleModal"
     >
-      MODAL
+      Categories
     </button>
     <div
       class="modal fade"
@@ -23,7 +23,7 @@
             <h5 class="modal-title text-white" id="exampleModalLabel">
               Tech category
             </h5>
-            {{ selectedCategories }}
+            <!-- {{ selectedCategories }} -->
             <button
               type="button"
               class="btn-close btn-close-white"
@@ -93,9 +93,6 @@ label {
 }
 .modal-header {
   border-bottom: none;
-}
-.check {
-  color: red !important;
 }
 .form-check-input:checked {
   background-color: #17abda;
