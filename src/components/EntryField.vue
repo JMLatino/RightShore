@@ -27,17 +27,34 @@
         >
           {{ answer }}
         </label>
-        <span v-else>
+        <div v-else id="q-23">
+          <div class="text-light pb-2">
+            <div for="Selected 1" class="d-flex justify-content-end py-2 ps-1">
+              Selected 1
+            </div>
+            <div for="Selected 2" class="d-flex justify-content-end py-2 ps-1">
+              Selected 2
+            </div>
+            <div for="Selected 3" class="d-flex justify-content-end py-2 ps-1">
+              Selected 3
+            </div>
+            <div for="Selected 4" class="d-flex justify-content-end py-2 ps-1">
+              Selected 4
+            </div>
+            <div for="Selected 5" class="d-flex justify-content-end py-2 ps-1">
+              Selected 5
+            </div>
+          </div>
           <label
             type="label"
-            class="btn btn-primary"
+            for="q-23"
+            class="btn btn-active"
             data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
+            data-bs-target="#categoriesModal"
           >
-            Categories
+            {{ true ? "Select categories" : "Select categories" }}
           </label>
-        </span>
-        <!-- <span v-if="typeof answer !== Object">test</span> -->
+        </div>
       </template>
     </div>
   </div>
@@ -60,16 +77,6 @@ export default {
     },
     markChecked(e) {
       document.getElementById(e.target.id).checked = true;
-      if (e.target.id === "q23-0") {
-        this.preferences.isModal = true;
-        // document
-        //   .getElementById("q23-0")
-        //   .setAttribute("data-bs-toggle", "modal");
-        // document
-        //   .getElementById("q23-0")
-        //   .setAttribute("data-bs-target", "#exampleModal");
-        // console.log("yeaaah clicked");
-      }
     },
   },
   mounted() {
@@ -86,7 +93,8 @@ export default {
 </script>
 
 <style scoped>
-label {
+label,
+#q-23 {
   font-size: 12px;
 }
 
@@ -98,12 +106,13 @@ label {
 label.btn:not(label.btn:last-child) {
   margin-right: 0.75em;
 }
-
+.btn:hover {
+  border: solid 1px #17abda;
+}
 .btn-active {
   color: #fff;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #17abda;
   --bs-btn-active-color: white;
   --bs-btn-active-border-color: #0070ad;
+  --bs-btn-active-bg: #17abda;
 }
 </style>

@@ -1,55 +1,47 @@
 <template>
-  <div v-if="!preferences.isModal">
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-    >
-      Categories
-    </button>
+  <div
+    class="modal fade"
+    id="categoriesModal"
+    tabindex="-1"
+    aria-labelledby="categoriesModalLabel"
+    aria-hidden="true"
+  >
     <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
+      class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
     >
-      <div
-        class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
-      >
-        <div class="modal-content p-3">
-          <div class="modal-header">
-            <h5 class="modal-title text-white" id="exampleModalLabel">
-              Tech category
-            </h5>
-            <!-- {{ selectedCategories }} -->
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body row pt-2 pb-5">
-            <p class="mb-3">Select up to 3 categories</p>
-            <div
-              v-for="(subQuestion, n) in subQuestions[0].answers.sort()"
-              :key="n"
-              class="col-12 col-sm-6 col-md-4 col-lg-3"
-            >
-              <div class="form-check">
-                <label>
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    v-model="inputs"
-                    :value="n"
-                    :disabled="inputs.length > 2 && inputs.indexOf(n) === -1"
-                  />
-                  {{ subQuestion }}
-                </label>
-              </div>
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title text-white" id="categoriesModalLabel">
+            Tech category
+          </h5>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body row pt-2 pb-5">
+          <p class="mb-3">Select up to 5 categories</p>
+          <div
+            v-for="(subQuestion, i) in subQuestions[0].answers[0].sort()"
+            :key="i"
+            class="col-12 col-sm-6 col-md-4 col-lg-3"
+          >
+            <div class="form-check">
+              <label>
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  :for="`q${subQuestions[0].id}-${i}`"
+                  v-model="inputs"
+                  :value="i"
+                  @click="setAnswer(subQuestions[0].id, i)"
+                  @change="(e) => markChecked(e)"
+                  :disabled="inputs.length > 4 && inputs.indexOf(i) === -1"
+                />
+                {{ subQuestion }}
+              </label>
             </div>
           </div>
         </div>
@@ -75,6 +67,15 @@ export default {
     },
     selectedCategories() {
       return console.log(this.inputs);
+    },
+  },
+  methods: {
+    setAnswer(index, answer) {
+      this.preferences.setPreference({ index, answer });
+      // this.preferences.setPreference({ index, answer });
+    },
+    markChecked(e) {
+      document.getElementById(e.target.id).checked = true;
     },
   },
   setup() {
@@ -104,7 +105,7 @@ label {
   border-radius: 6px !important;
 }
 @media only screen and (max-width: 992px) {
-  #exampleModal > div {
+  #categoriesModal > div {
     max-width: 80% !important;
   }
 }

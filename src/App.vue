@@ -53,6 +53,12 @@
             </div>
             <div id="coffee-cup">
               <div>
+                <img
+                  src="@/assets/capgemini.svg"
+                  alt="Capgemini"
+                  class="capgemini-logo"
+                />
+
                 <svg
                   id="espresso"
                   class="position-absolute mx-auto"
@@ -250,6 +256,14 @@ p,
 label,
 .btn {
   color: white;
+}
+
+.capgemini-logo {
+  position: absolute;
+  left: 43.8%;
+  top: 92.6%;
+  z-index: 1;
+  width: 13%;
 }
 
 #coffee-content {

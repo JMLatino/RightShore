@@ -5,38 +5,66 @@
     "entries": [
       {
         "id": 1,
-        "question" : "Time to market",
-        "answers": ["Low Priority", "Medium Priority", "High Priority"]
+        "question": "Time to market",
+        "answers": [
+          "Low Priority",
+          "Medium Priority",
+          "High Priority"
+        ]
       },
       {
         "id": 2,
-        "question" : "Cost Consideration",
-        "answers"  : ["Budget Constraint", "Optimum", "No Budget Constraint"]
+        "question": "Cost Consideration",
+        "answers": [
+          "Budget Constraint",
+          "Optimum",
+          "No Budget Constraint"
+        ]
       },
       {
         "id": 3,
-        "question" : "Quality Level",
-        "answers"  : ["POC/MVP", "Good Quality", "High Standards"]
+        "question": "Quality Level",
+        "answers": [
+          "POC/MVP",
+          "Good Quality",
+          "High Standards"
+        ]
       },
       {
         "id": 4,
-        "question" : "Process Maturity",
-        "answers"  : ["Innovation", "Mature", "Packaged"]
+        "question": "Process Maturity",
+        "answers": [
+          "Innovation",
+          "Mature",
+          "Packaged"
+        ]
       },
       {
         "id": 5,
-        "question" : "Innovative Delivery",
-        "answers"  : ["Neutral", "Medium", "High"]
+        "question": "Innovative Delivery",
+        "answers": [
+          "Neutral",
+          "Medium",
+          "High"
+        ]
       },
       {
         "id": 6,
-        "question" : "Rank the Sustainability",
-		    "answers"  : ["Neutral", "Important", "Highly Important"]
+        "question": "Rank the Sustainability",
+        "answers": [
+          "Neutral",
+          "Important",
+          "Highly Important"
+        ]
       },
       {
         "id": 7,
-        "question" : "Rank the Governance",
-		    "answers"  : ["Neutral", "Important", "Highly Important"]
+        "question": "Rank the Governance",
+        "answers": [
+          "Neutral",
+          "Important",
+          "Highly Important"
+        ]
       }
     ]
   },
@@ -46,33 +74,57 @@
     "entries": [
       {
         "id": 8,
-        "question" : "Team Size",
-		    "answers"  : ["Small", "Medium", "Large"]
+        "question": "Team Size",
+        "answers": [
+          "Small",
+          "Medium",
+          "Large"
+        ]
       },
       {
         "id": 9,
-        "question" : "Expected Timeline",
-		    "answers"  : ["Short", "Long", "Long Term"]
+        "question": "Expected Timeline",
+        "answers": [
+          "Short",
+          "Long",
+          "Long Term"
+        ]
       },
       {
         "id": 10,
-        "question" : "CIA Ratings",
-		    "answers"  : ["Low", "Medium", "High"]
+        "question": "CIA Ratings",
+        "answers": [
+          "Low",
+          "Medium",
+          "High"
+        ]
       },
       {
         "id": 11,
-        "question" : "Domain Intensity",
-		    "answers"  : ["Neutral", "Heavy", "Very Heavy"]
+        "question": "Domain Intensity",
+        "answers": [
+          "Neutral",
+          "Heavy",
+          "Very Heavy"
+        ]
       },
       {
         "id": 12,
-        "question" : "Packaged Solution",
-		    "answers"  : ["Not Packaged", "Packaged", "Tailored Package"]
+        "question": "Packaged Solution",
+        "answers": [
+          "Not Packaged",
+          "Packaged",
+          "Tailored Package"
+        ]
       },
       {
         "id": 13,
-        "question" : "Legacy Dominance",
-		    "answers"  : ["Neutral", "Medium", "High"]
+        "question": "Legacy Dominance",
+        "answers": [
+          "Neutral",
+          "Medium",
+          "High"
+        ]
       }
     ]
   },
@@ -82,23 +134,39 @@
     "entries": [
       {
         "id": 14,
-        "question" : "Complexity",
-		    "answers"  : ["Simple", "Fair", "High"]
+        "question": "Complexity",
+        "answers": [
+          "Simple",
+          "Fair",
+          "High"
+        ]
       },
       {
         "id": 15,
-        "question" : "Ease of Collaboration",
-		    "answers"  : ["Neutral", "Important", "Highly Important"]
+        "question": "Ease of Collaboration",
+        "answers": [
+          "Neutral",
+          "Important",
+          "Highly Important"
+        ]
       },
       {
         "id": 16,
-        "question" : "Cultural Alignment",
-		    "answers"  : ["Neutral", "Important", "Highly Important"]
+        "question": "Cultural Alignment",
+        "answers": [
+          "Neutral",
+          "Important",
+          "Highly Important"
+        ]
       },
       {
         "id": 17,
-        "question" : "Incumbent Transition",
-		    "answers"  : ["No Priority", "Priority", "High Priority"]
+        "question": "Incumbent Transition",
+        "answers": [
+          "No Priority",
+          "Priority",
+          "High Priority"
+        ]
       }
     ]
   },
@@ -108,33 +176,52 @@
     "entries": [
       {
         "id": 18,
-        "question" : "Required language",
-		    "answers"  : ["Dutch", "English"]
+        "question": "Required language",
+        "answers": [
+          "Dutch",
+          "English"
+        ]
       },
       {
         "id": 19,
-        "question" : "Documentation language",
-		    "answers"  : ["Dutch", "English"]
+        "question": "Documentation language",
+        "answers": [
+          "Dutch",
+          "English"
+        ]
       },
       {
         "id": 20,
-        "question" : "Data requirement standards",
-		    "answers"  : ["National", "European", "International"]
+        "question": "Data requirement standards",
+        "answers": [
+          "National",
+          "European",
+          "International"
+        ]
       },
       {
         "id": 21,
-        "question" : "Compliance and Regulation standards",
-		    "answers"  : ["National", "European", "International"]
+        "question": "Compliance and Regulation standards",
+        "answers": [
+          "National",
+          "European",
+          "International"
+        ]
       },
       {
         "id": 22,
-        "question" : "Technology type",
-		    "answers"  : ["Legacy", "New"]
+        "question": "Technology type",
+        "answers": [
+          "Legacy",
+          "New"
+        ]
       },
       {
         "id": 23,
         "question": "Tech category",
-        "answers": [[           "UX Design",
+        "answers": [
+          [
+            "UX Design",
             "Mobile Development",
             "Data Engineering",
             "Data Insights",
@@ -175,7 +262,9 @@
             "Data Visualisation",
             "Cloud Architecture",
             "MS Dynamics",
-            "Salesforce"]]
+            "Salesforce"
+          ]
+        ]
       }
     ]
   }

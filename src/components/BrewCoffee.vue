@@ -57,7 +57,6 @@ export default {
       }
       window.localStorage.removeItem("preferences");
       this.preferences.clearForm();
-
     },
     brewStrategy() {
       window.scrollTo(0, document.body.scrollHeight);
@@ -70,7 +69,7 @@ export default {
   },
   computed: {
     isComplete() {
-      return Object.keys(this.preferences.answers).length === 23;
+      return Object.keys(this.preferences.answers).length === 22;
     },
     isReset() {
       return Object.keys(this.preferences.answers).length;
