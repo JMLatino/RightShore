@@ -29,15 +29,14 @@
             class="col-12 col-sm-6 col-md-4 col-lg-3"
           >
             <div class="form-check">
-              <label>
+              <label :for="`q${subQuestions[0].id}-${i}`">
                 <input
                   type="checkbox"
+                  :id="`q${subQuestions[0].id}-${i}`"
                   class="form-check-input"
-                  :for="`q${subQuestions[0].id}-${i}`"
                   v-model="inputs"
                   :value="i"
                   @click="setAnswer(subQuestions[0].id, i)"
-                  @change="(e) => markChecked(e)"
                   :disabled="inputs.length > 4 && inputs.indexOf(i) === -1"
                 />
                 {{ subQuestion }}
@@ -74,9 +73,22 @@ export default {
       this.preferences.setPreference({ index, answer });
       // this.preferences.setPreference({ index, answer });
     },
-    markChecked(e) {
-      document.getElementById(e.target.id).checked = true;
+    keepSelection() {
+      const val = Object.values(
+        JSON.parse(localStorage.getItem("preferences"))
+      ).answers;
+
+      // document.getElementById(`q23-${val}`).checked = true;
+      console.log((JSON.parse(localStorage.getItem("preferences")).answers));
+
+      for (const [question, answer] of Object.entries(JSON.parse(localStorage.getItem("preferences")).answers.filter(el => Object.keys(el) === "q23"))) {
+        document.getElementById(`${question}-${answer}`).checked = true;
+      }
+      console.log("yeeee");
     },
+  },
+  mounted() {
+    this.keepSelection();
   },
   setup() {
     const preferences = usePreferencesStore();

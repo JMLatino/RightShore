@@ -36,9 +36,6 @@ import EntryField from "./EntryField.vue";
 import { usePreferencesStore } from "../store/preferences";
 export default {
   name: "CategoryList",
-  data() {
-    return { watchedVal: 0 };
-  },
   components: { EntryField },
   props: ["category", "name"],
   computed: {
@@ -50,13 +47,6 @@ export default {
         this.preferences.answered(this.category.catIndex) ===
         this.category.entries.length
       );
-    },
-  },
-  watch: {
-    isFilledIn(bool) {
-      if (bool === true) {
-        this.watchedVal += 1;
-      }
     },
   },
   setup() {
@@ -89,18 +79,21 @@ export default {
 
 .fixed-height-accordion {
   height: 255px;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
 }
 
 .accordion-item {
   background: none;
-  border: none;
 }
 
 .accordion-button {
   width: 500px;
   background: #ffffff;
   color: var(--black);
+}
+
+.accordion-item {
+  border: none;
 }
 
 .accordion-collapse.collapsed {

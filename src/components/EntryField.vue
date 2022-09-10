@@ -29,21 +29,14 @@
         </label>
         <div v-else id="q-23">
           <div class="text-light pb-2">
-            <div for="Selected 1" class="d-flex justify-content-end py-2 ps-1">
-              Selected 1
-            </div>
-            <div for="Selected 2" class="d-flex justify-content-end py-2 ps-1">
-              Selected 2
-            </div>
-            <div for="Selected 3" class="d-flex justify-content-end py-2 ps-1">
-              Selected 3
-            </div>
-            <div for="Selected 4" class="d-flex justify-content-end py-2 ps-1">
-              Selected 4
-            </div>
-            <div for="Selected 5" class="d-flex justify-content-end py-2 ps-1">
-              Selected 5
-            </div>
+            <!-- <div
+              v-for="(answer, i) in associatedAnswer"
+              :key="i"
+              for="Selected 1"
+              class="d-flex justify-content-end py-2 ps-1"
+            >
+              {{ answer }}
+            </div> -->
           </div>
           <label
             type="label"
@@ -52,7 +45,7 @@
             data-bs-toggle="modal"
             data-bs-target="#categoriesModal"
           >
-            {{ true ? "Select categories" : "Select categories" }}
+            {{ noneSelected ? "Change categories" : "Select categories" }}
           </label>
         </div>
       </template>
@@ -64,6 +57,24 @@ import { usePreferencesStore } from "../store/preferences";
 export default {
   name: "EntryField",
   props: ["entry"],
+  computed: {
+    noneSelected() {
+      return console.log(Object.entries(this.preferences.answers));
+    },
+    associatedAnswer() {
+      if (Object.keys(this.preferences.answers === "q23")) {
+        return this.entry.answers[0][Object.values(this.preferences.answers)];
+        // for (const [b] of Object.entries(this.preferences.answers)) {
+        //   // console.log(a);
+        //   this.arr.push(b);
+        // }
+      }
+
+      return false;
+      // return this.entry.answers[0];
+      // for (const [question23, answer] of Object.entries(this.entry.answers[0]))
+    },
+  },
   methods: {
     keepSelection() {
       for (const [question, answer] of Object.entries(
