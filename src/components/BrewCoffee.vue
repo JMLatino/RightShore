@@ -35,6 +35,7 @@ export default {
   methods: {
     handleReset() {
       const radioBtn = document.getElementsByClassName("btn-check");
+      const checkBtn = document.getElementsByClassName("form-check-input");
       const coffeContent = document.getElementById("coffee-content");
       const pourEffects = document.getElementById("pour-effects");
       const pourElements = document.getElementsByClassName("pour-effect");
@@ -42,6 +43,11 @@ export default {
       for (let i = 0; i < radioBtn.length; i++) {
         radioBtn[i].checked = false;
       }
+
+      for (let i = 0; i < checkBtn.length; i++) {
+        checkBtn[i].checked = false;
+      }
+
       document.getElementById("recommendation").innerHTML = "";
       document.getElementById("waveShape").classList.remove("animate");
       coffeContent.classList.remove("visible");
@@ -55,9 +61,8 @@ export default {
         pourElements[i].classList.remove("pour");
         pourElements[i].classList.remove("moved");
       }
-      window.localStorage.removeItem("preferences");
       this.preferences.clearForm();
-
+      window.localStorage.removeItem("preferences");
     },
     brewStrategy() {
       window.scrollTo(0, document.body.scrollHeight);

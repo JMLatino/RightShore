@@ -20,9 +20,33 @@
           @click="setAnswer(entry.id, answerId)"
           @change="(e) => markChecked(e)"
         />
-        <label :for="`q${entry.id}-${answerId}`" class="btn btn-active p-2">
+        <label
+          v-if="typeof answer === 'string'"
+          :for="`q${entry.id}-${answerId}`"
+          class="btn btn-active p-2"
+        >
           {{ answer }}
         </label>
+        <div v-else id="q-23" class="d-flex flex-column align-items-end">
+          <div class="text-light pb-2">
+            <div
+              v-if="associatedAnswer"
+              class="d-flex justify-content-end py-2 ps-1"
+            >
+              {{ associatedAnswer }}
+            </div>
+          </div>
+          <label
+            type="label"
+            for="q-23"
+            class="btn btn-active"
+            :class="{ completed: noneSelected === 'Change' }"
+            data-bs-toggle="modal"
+            data-bs-target="#categoriesModal"
+          >
+            {{ noneSelected }} categories
+          </label>
+        </div>
       </template>
     </div>
   </div>
@@ -32,6 +56,24 @@ import { usePreferencesStore } from "../store/preferences";
 export default {
   name: "EntryField",
   props: ["entry"],
+  computed: {
+    noneSelected() {
+      console.log('noneSelected', this.preferences.answers);
+      // line 63 should check for answers matching q23, so it should be filtered
+      if (Object.entries(this.preferences.answers).length >= 1) {
+        return "Change";
+      } else {
+        return "Select";
+      }
+    },
+    associatedAnswer() {
+      if (Object.keys(this.preferences.answers === "q23")) {
+        return this.entry.answers[0][Object.values(this.preferences.answers)];
+      }
+
+      return false;
+    },
+  },
   methods: {
     keepSelection() {
       for (const [question, answer] of Object.entries(
@@ -61,7 +103,8 @@ export default {
 </script>
 
 <style scoped>
-label {
+label,
+#q-23 {
   font-size: 12px;
 }
 
@@ -73,12 +116,18 @@ label {
 label.btn:not(label.btn:last-child) {
   margin-right: 0.75em;
 }
-
+.btn:hover {
+  border: solid 1px #17abda;
+}
 .btn-active {
   color: #fff;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #17abda;
   --bs-btn-active-color: white;
   --bs-btn-active-border-color: #0070ad;
+  --bs-btn-active-bg: #17abda;
+}
+
+.completed {
+  border-color: #0070ad;
+  background: #17abda;
 }
 </style>

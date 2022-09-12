@@ -53,6 +53,12 @@
             </div>
             <div id="coffee-cup">
               <div>
+                <img
+                  src="@/assets/capgemini.svg"
+                  alt="Capgemini"
+                  class="capgemini-logo"
+                />
+
                 <svg
                   id="espresso"
                   class="position-absolute mx-auto"
@@ -104,11 +110,13 @@
       </div>
       <div class="table mb-0"></div>
     </div>
+    <ModalView />
   </main>
 </template>
 <script setup>
 import QuestionList from "./components/QuestionList.vue";
 import BrewCoffee from "./components/BrewCoffee.vue";
+import ModalView from "./components/ModalView.vue";
 </script>
 
 <style>
@@ -250,6 +258,14 @@ label,
   color: white;
 }
 
+.capgemini-logo {
+  position: absolute;
+  left: 43.8%;
+  top: 92.6%;
+  z-index: 1;
+  width: 13%;
+}
+
 #coffee-content {
   z-index: 3;
 }
@@ -258,7 +274,8 @@ label,
   height: 200px;
   position: absolute;
   top: 0%;
-  border-radius: 5px 10px 10px 10px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
   opacity: 0;
   background: #3d2518;
   animation: pourAction cubic-bezier(1, 0.04, 0.74, 0.2), secondAction;

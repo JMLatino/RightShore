@@ -23,7 +23,7 @@
       class="accordion-collapse collapse"
       :class="{ show: name === 0 }"
       :aria-labelledby="name"
-      data-bs-parent="#accordionExample"
+      data-bs-parent="#accordion-group"
     >
       <div class="accordion-body overflow-hidden p-0">
         <EntryField v-for="e in category.entries" :key="e" :entry="e" />

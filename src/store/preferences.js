@@ -30,10 +30,13 @@ export const usePreferencesStore = defineStore({
       });
     },
     clearForm() {
-      this.preferences.forEach(category => category.entries.forEach((question) => {
-        delete question.answered;
-        return question;
-      }))
+      window.localStorage.removeItem("preferences");
+      this.preferences.forEach((category) =>
+        category.entries.forEach((question) => {
+          delete question.answered;
+          return question;
+        })
+      );
     },
     toggleCoffee() {
       this.isCoffee = true;
