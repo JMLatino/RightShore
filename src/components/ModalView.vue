@@ -64,27 +64,19 @@ export default {
         return el.id == "23";
       });
     },
-    selectedCategories() {
-      return console.log(this.inputs);
-    },
   },
   methods: {
     setAnswer(index, answer) {
       this.preferences.setPreference({ index, answer });
-      // this.preferences.setPreference({ index, answer });
     },
     keepSelection() {
-      const val = Object.values(
-        JSON.parse(localStorage.getItem("preferences"))
-      ).answers;
-
-      // document.getElementById(`q23-${val}`).checked = true;
-      console.log((JSON.parse(localStorage.getItem("preferences")).answers));
-
-      for (const [question, answer] of Object.entries(JSON.parse(localStorage.getItem("preferences")).answers.filter(el => Object.keys(el) === "q23"))) {
-        document.getElementById(`${question}-${answer}`).checked = true;
+      for (const [q, a] of Object.entries(
+        JSON.parse(localStorage.getItem("preferences")).answers
+      )) {
+        if (q === "q23") {
+          document.getElementById(`q23-${a}`).checked = true;
+        }
       }
-      console.log("yeeee");
     },
   },
   mounted() {

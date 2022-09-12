@@ -21,7 +21,7 @@
     <div
       :id="'collapse' + name"
       class="accordion-collapse collapse"
-      :class="{ show: name === 0 }"
+      :class="{ show: name === 3 }"
       :aria-labelledby="name"
       data-bs-parent="#accordion-group"
     >

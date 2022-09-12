@@ -30,6 +30,7 @@ export const usePreferencesStore = defineStore({
       });
     },
     clearForm() {
+      window.localStorage.removeItem("preferences");
       this.preferences.forEach((category) =>
         category.entries.forEach((question) => {
           delete question.answered;

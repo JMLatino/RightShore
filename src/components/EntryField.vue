@@ -27,25 +27,24 @@
         >
           {{ answer }}
         </label>
-        <div v-else id="q-23">
+        <div v-else id="q-23" class="d-flex flex-column align-items-end">
           <div class="text-light pb-2">
-            <!-- <div
-              v-for="(answer, i) in associatedAnswer"
-              :key="i"
-              for="Selected 1"
+            <div
+              v-if="associatedAnswer"
               class="d-flex justify-content-end py-2 ps-1"
             >
-              {{ answer }}
-            </div> -->
+              {{ associatedAnswer }}
+            </div>
           </div>
           <label
             type="label"
             for="q-23"
             class="btn btn-active"
+            :class="{ completed: noneSelected === 'Change' }"
             data-bs-toggle="modal"
             data-bs-target="#categoriesModal"
           >
-            {{ noneSelected ? "Change categories" : "Select categories" }}
+            {{ noneSelected }} categories
           </label>
         </div>
       </template>
@@ -59,20 +58,19 @@ export default {
   props: ["entry"],
   computed: {
     noneSelected() {
-      return console.log(Object.entries(this.preferences.answers));
+      console.log('noneSelected', this.preferences.answers);
+      if (Object.entries(this.preferences.answers).length >= 1) {
+        return "Change";
+      } else {
+        return "Select";
+      }
     },
     associatedAnswer() {
       if (Object.keys(this.preferences.answers === "q23")) {
         return this.entry.answers[0][Object.values(this.preferences.answers)];
-        // for (const [b] of Object.entries(this.preferences.answers)) {
-        //   // console.log(a);
-        //   this.arr.push(b);
-        // }
       }
 
       return false;
-      // return this.entry.answers[0];
-      // for (const [question23, answer] of Object.entries(this.entry.answers[0]))
     },
   },
   methods: {
@@ -125,5 +123,10 @@ label.btn:not(label.btn:last-child) {
   --bs-btn-active-color: white;
   --bs-btn-active-border-color: #0070ad;
   --bs-btn-active-bg: #17abda;
+}
+
+.completed {
+  border-color: #0070ad;
+  background: #17abda;
 }
 </style>

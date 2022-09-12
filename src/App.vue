@@ -274,7 +274,8 @@ label,
   height: 200px;
   position: absolute;
   top: 0%;
-  border-radius: 5px 10px 10px 10px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
   opacity: 0;
   background: #3d2518;
   animation: pourAction cubic-bezier(1, 0.04, 0.74, 0.2), secondAction;
