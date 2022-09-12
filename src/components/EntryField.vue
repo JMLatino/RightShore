@@ -59,6 +59,7 @@ export default {
   computed: {
     noneSelected() {
       console.log('noneSelected', this.preferences.answers);
+      // line 63 should check for answers matching q23, so it should be filtered
       if (Object.entries(this.preferences.answers).length >= 1) {
         return "Change";
       } else {

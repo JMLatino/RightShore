@@ -75,7 +75,7 @@ export default {
   },
   computed: {
     isComplete() {
-      return Object.keys(this.preferences.answers).length === 22;
+      return Object.keys(this.preferences.answers).length === 23;
     },
     isReset() {
       return Object.keys(this.preferences.answers).length;
