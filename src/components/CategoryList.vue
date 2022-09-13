@@ -21,7 +21,7 @@
     <div
       :id="'collapse' + name"
       class="accordion-collapse collapse"
-      :class="{ show: name === 3 }"
+      :class="{ show: name === 0 }"
       :aria-labelledby="name"
       data-bs-parent="#accordion-group"
     >
@@ -84,16 +84,13 @@ export default {
 
 .accordion-item {
   background: none;
+  border: none;
 }
 
 .accordion-button {
   width: 500px;
   background: #ffffff;
   color: var(--black);
-}
-
-.accordion-item {
-  border: none;
 }
 
 .accordion-collapse.collapsed {

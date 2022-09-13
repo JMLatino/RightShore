@@ -28,23 +28,23 @@
           {{ answer }}
         </label>
         <div v-else id="q-23" class="d-flex flex-column align-items-end">
-          <div class="text-light pb-2">
+          <!-- <div class="text-light pb-2">
             <div
               v-if="associatedAnswer"
               class="d-flex justify-content-end py-2 ps-1"
             >
               {{ associatedAnswer }}
             </div>
-          </div>
+          </div> -->
           <label
             type="label"
             for="q-23"
             class="btn btn-active"
-            :class="{ completed: noneSelected === 'Change' }"
+            :class="{ completed: watchModal }"
             data-bs-toggle="modal"
             data-bs-target="#categoriesModal"
           >
-            {{ noneSelected }} categories
+            {{ preferences.modalSelected }} categories
           </label>
         </div>
       </template>
@@ -57,24 +57,21 @@ export default {
   name: "EntryField",
   props: ["entry"],
   computed: {
-    noneSelected() {
-      console.log('noneSelected', this.preferences.answers);
-      if (Object.entries(this.preferences.answers).length >= 1) {
-        return "Change";
-      } else {
-        return "Select";
-      }
-    },
     associatedAnswer() {
       if (Object.keys(this.preferences.answers === "q23")) {
         return this.entry.answers[0][Object.values(this.preferences.answers)];
       }
-
+      return false;
+    },
+    watchModal() {
+      if (this.preferences.modalSelected === "Change") {
+        return true;
+      }
       return false;
     },
   },
   methods: {
-    keepSelection() {
+    retrieveSelection() {
       for (const [question, answer] of Object.entries(
         JSON.parse(localStorage.getItem("preferences")).answers
       )) {
@@ -89,7 +86,7 @@ export default {
     },
   },
   mounted() {
-    this.keepSelection();
+    this.retrieveSelection();
   },
   setup() {
     const preferences = usePreferencesStore();
@@ -116,17 +113,17 @@ label.btn:not(label.btn:last-child) {
   margin-right: 0.75em;
 }
 .btn:hover {
-  border: solid 1px #17abda;
+  border: solid 1px var(--blue);
 }
 .btn-active {
   color: #fff;
   --bs-btn-active-color: white;
-  --bs-btn-active-border-color: #0070ad;
-  --bs-btn-active-bg: #17abda;
+  --bs-btn-active-border-color: var(--darkBlue);
+  --bs-btn-active-bg: var(--blue);
 }
 
 .completed {
-  border-color: #0070ad;
-  background: #17abda;
+  border-color: var(--darkBlue);
+  background: var(--blue);
 }
 </style>
