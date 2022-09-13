@@ -8,7 +8,6 @@
         "question": "Time to market",
         "answers": [
           "Low Priority",
-          "Medium Priority",
           "High Priority"
         ]
       },
@@ -16,8 +15,8 @@
         "id": 2,
         "question": "Cost Consideration",
         "answers": [
-          "Budget Constraint",
-          "Optimum",
+          "Limited Budget",
+          "Optimum Budget",
           "No Budget Constraint"
         ]
       },
@@ -34,36 +33,36 @@
         "id": 4,
         "question": "Process Maturity",
         "answers": [
-          "Innovation",
-          "Mature",
-          "Packaged"
+          "Just starting up",
+          "Require further refinement",
+          "Self Sustaining"
         ]
       },
       {
         "id": 5,
         "question": "Innovative Delivery",
         "answers": [
-          "Neutral",
-          "Medium",
-          "High"
+          "Not applicable",
+          "Slightly important",
+          "Important"
         ]
       },
       {
         "id": 6,
         "question": "Rank the Sustainability",
         "answers": [
-          "Neutral",
-          "Important",
-          "Highly Important"
+          "Not applicable",
+          "Slightly important",
+          "Important"
         ]
       },
       {
         "id": 7,
         "question": "Rank the Governance",
         "answers": [
-          "Neutral",
-          "Important",
-          "Highly Important"
+          "Not applicable",
+          "Slighty important",
+          "Important"
         ]
       }
     ]
@@ -86,7 +85,7 @@
         "question": "Expected Timeline",
         "answers": [
           "Short",
-          "Long",
+          "Medium",
           "Long Term"
         ]
       },
@@ -103,14 +102,14 @@
         "id": 11,
         "question": "Domain Intensity",
         "answers": [
-          "Neutral",
-          "Heavy",
-          "Very Heavy"
+          "Not applicable",
+          "Some business knowledge helps",
+          "Very domain intense"
         ]
       },
       {
         "id": 12,
-        "question": "Packaged Solution",
+        "question": "Packaging Level",
         "answers": [
           "Not Packaged",
           "Packaged",
@@ -121,7 +120,7 @@
         "id": 13,
         "question": "Legacy Dominance",
         "answers": [
-          "Neutral",
+          "Not applicable",
           "Medium",
           "High"
         ]
@@ -138,34 +137,33 @@
         "answers": [
           "Simple",
           "Fair",
-          "High"
+          "Complex"
         ]
       },
       {
         "id": 15,
         "question": "Ease of Collaboration",
         "answers": [
-          "Neutral",
-          "Important",
-          "Highly Important"
+          "Not applicable",
+          "Slightly important",
+          "Important"
         ]
       },
       {
         "id": 16,
         "question": "Cultural Alignment",
         "answers": [
-          "Neutral",
-          "Important",
-          "Highly Important"
+          "Not applicable",
+          "Slightly important",
+          "Important"
         ]
       },
       {
         "id": 17,
         "question": "Incumbent Transition",
         "answers": [
-          "No Priority",
-          "Priority",
-          "High Priority"
+          "Yes",
+          "No"
         ]
       }
     ]
@@ -179,7 +177,8 @@
         "question": "Required language",
         "answers": [
           "Dutch",
-          "English"
+          "English",
+          "Other"
         ]
       },
       {
@@ -187,7 +186,8 @@
         "question": "Documentation language",
         "answers": [
           "Dutch",
-          "English"
+          "English",
+          "Other"
         ]
       },
       {
