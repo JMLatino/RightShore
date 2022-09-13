@@ -30,7 +30,6 @@ export default {
         "Nearshore Heavy <div>with</div> Offshore presence",
         "Offshore Heavy <div>with</div> Onshore presence",
       ],
-      recommendation: "YOOOOO",
     };
   },
   methods: {

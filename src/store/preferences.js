@@ -37,11 +37,11 @@ export const usePreferencesStore = defineStore({
     clearForm() {
       this.preferences.forEach((category) =>
         category.entries.forEach((question) => {
-          // somehow keeping this delete operator will not remove the localstorage after refresh
           delete question.answered;
           return question;
         })
       );
+      this.answers = {};
       window.localStorage.removeItem("preferences");
     },
     handleClick() {

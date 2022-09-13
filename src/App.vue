@@ -256,7 +256,7 @@ label,
 .capgemini-logo {
   position: absolute;
   left: 43.8%;
-  top: 92.6%;
+  top: 45.6%;
   z-index: 1;
   width: 13%;
 }
