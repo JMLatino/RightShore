@@ -84,16 +84,13 @@ export default {
 
 .accordion-item {
   background: none;
+  border: none;
 }
 
 .accordion-button {
   width: 500px;
   background: #ffffff;
   color: var(--black);
-}
-
-.accordion-item {
-  border: none;
 }
 
 .accordion-collapse.collapsed {

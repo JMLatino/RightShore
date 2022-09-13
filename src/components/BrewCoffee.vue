@@ -62,12 +62,13 @@ export default {
         pourElements[i].classList.remove("moved");
       }
       this.preferences.clearForm();
-      window.localStorage.removeItem("preferences");
     },
     brewStrategy() {
       window.scrollTo(0, document.body.scrollHeight);
       this.preferences.handleClick();
+
       const option = this.preferences.answers.q1;
+
       if (this.coffeeResults[option] !== undefined)
         document.getElementById("recommendation").innerHTML =
           this.coffeeResults[option];
@@ -94,17 +95,17 @@ export default {
 <style scoped>
 .btn-custom,
 .btn-reset {
-  color: white;
+  color: #ffffff;
   font-size: 1.5em;
   border-radius: 13px;
-  background: #17abda;
+  background: var(--blue);
   border: 1px solid #ffffff;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #17abda;
-  --bs-btn-active-color: white;
-  --bs-btn-active-bg: #17abda;
-  --bs-btn-active-border-color: #0070ad;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--blue);
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: var(--blue);
+  --bs-btn-active-border-color: var(--darkBlue);
 }
 
 .btn-reset {

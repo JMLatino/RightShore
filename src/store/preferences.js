@@ -6,7 +6,6 @@ export const usePreferencesStore = defineStore({
   state: () => ({
     preferences: questions,
     answers: {},
-    isCoffee: false,
   }),
   getters: {
     data: (state) => state.preferences,
@@ -17,6 +16,12 @@ export const usePreferencesStore = defineStore({
         );
         return countAnswered.length;
       };
+    },
+    modalSelected(state) {
+      if (Object.keys(state.answers).includes("q23")) {
+        return "Change";
+      }
+      return "Select";
     },
   },
   actions: {
@@ -30,16 +35,14 @@ export const usePreferencesStore = defineStore({
       });
     },
     clearForm() {
-      window.localStorage.removeItem("preferences");
       this.preferences.forEach((category) =>
         category.entries.forEach((question) => {
           delete question.answered;
           return question;
         })
       );
-    },
-    toggleCoffee() {
-      this.isCoffee = true;
+      this.answers = {};
+      window.localStorage.removeItem("preferences");
     },
     handleClick() {
       document.getElementById("pour-effects").classList.remove("invisible");

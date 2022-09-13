@@ -69,7 +69,7 @@ export default {
     setAnswer(index, answer) {
       this.preferences.setPreference({ index, answer });
     },
-    keepSelection() {
+    retrieveSelection() {
       for (const [q, a] of Object.entries(
         JSON.parse(localStorage.getItem("preferences")).answers
       )) {
@@ -80,7 +80,7 @@ export default {
     },
   },  
   mounted() {
-    this.keepSelection();
+    this.retrieveSelection();
   },
   setup() {
     const preferences = usePreferencesStore();
@@ -100,8 +100,8 @@ label {
   border-bottom: none;
 }
 .form-check-input:checked {
-  background-color: #17abda;
-  border-color: #0070ad;
+  background-color: var(--blue);
+  border-color: var(--darkBlue);
 }
 .modal-content {
   background: var(--black);

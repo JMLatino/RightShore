@@ -58,7 +58,6 @@
                   alt="Capgemini"
                   class="capgemini-logo"
                 />
-
                 <svg
                   id="espresso"
                   class="position-absolute mx-auto"
@@ -87,13 +86,7 @@
                         d="M395 300V2.5C395 2.5 394.02 2.4 393.203 2.4C393.203 2.4 351.553 0.1 327.053 0C302.553 0 260.74 2.4 260.74 2.4C240.65 3.5 211.25 4.2 208.637 4.3C205.37 4.2 176.46 3.5 156.37 2.4C156.37 2.4 114.23 0.1 89.73 0C65.23 0 23.09 2.4 23.09 2.4C3 3.5 -26.5633 4.2 -29.1767 4.3C-32.4433 4.2 -61.8433 3.5 -81.77 2.4C-81.77 2.4 -86.8333 2.1 -95 1.7V300H395Z"
                       />
                     </g>
-                    <foreignObject
-                      x="83"
-                      y="57"
-                      width="150"
-                      height="150"
-                      ref="recommendation"
-                    >
+                    <foreignObject x="83" y="57" width="150" height="150">
                       <p
                         id="recommendation"
                         class="text-center fw-bold"
@@ -124,6 +117,8 @@ import ModalView from "./components/ModalView.vue";
   --black: #333333;
   --darkGrey: #d6d6d6;
   --lightGrey: #bdbdbd;
+  --darkBlue: #0070ad;
+  --blue: #17abda;
   --lightBlue: #87c4d6;
 }
 
@@ -261,7 +256,7 @@ label,
 .capgemini-logo {
   position: absolute;
   left: 43.8%;
-  top: 92.6%;
+  top: 45.6%;
   z-index: 1;
   width: 13%;
 }
@@ -274,11 +269,10 @@ label,
   height: 200px;
   position: absolute;
   top: 0%;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
+  border-radius: 5px 10px 10px 10px;
   opacity: 0;
   background: #3d2518;
-  animation: pourAction cubic-bezier(1, 0.04, 0.74, 0.2), secondAction;
+  animation: pourAction cubic-bezier(1, 0.04, 0.74, 0.2);
   animation-timing-function: linear;
   animation-duration: 4s, 1s;
   animation-delay: 0ms, 4000ms;
@@ -359,16 +353,6 @@ label,
     opacity: 1;
     height: 20px;
     transform: translateY(175px);
-  }
-}
-
-@keyframes secondAction {
-  from {
-    rotate: 45deg;
-  }
-
-  to {
-    rotate: 45deg;
   }
 }
 
