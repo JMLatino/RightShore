@@ -1,10 +1,20 @@
 <template>
-  <div class="m-3 d-flex">
-    <span class="col">
-      <label for="time-to-market" class="form-label">{{
-        entry.question
-      }}</label>
-    </span>
+  <div class="m-3 d-flex justify-content-between">
+    <div class="d-flex gap-3">
+      <label class="form-label">
+        <span class="position-relative">
+          {{ entry.question }}
+          <img
+            data-bs-toggle="modal"
+            data-bs-target="#modalClarification"
+            @click="handleToggle(entry)"
+            src="../assets/questionmark.svg"
+            height="22"
+            alt=""
+          />
+        </span>
+      </label>
+    </div>
     <div
       class="btn-group d-flex justify-content-end"
       role="group"
@@ -71,6 +81,9 @@ export default {
     },
   },
   methods: {
+    handleToggle(e) {
+      this.preferences.setExplanation(e);
+    },
     retrieveSelection() {
       for (const [question, answer] of Object.entries(
         JSON.parse(localStorage.getItem("preferences")).answers
@@ -112,9 +125,11 @@ label,
 label.btn:not(label.btn:last-child) {
   margin-right: 0.75em;
 }
+
 .btn:hover {
   border: solid 1px var(--blue);
 }
+
 .btn-active {
   color: #fff;
   --bs-btn-active-color: white;

@@ -78,7 +78,7 @@ export default {
         }
       }
     },
-  },  
+  },
   mounted() {
     this.retrieveSelection();
   },
@@ -96,16 +96,13 @@ export default {
 label {
   font-size: 12px;
 }
-.modal-header {
-  border-bottom: none;
-}
 .form-check-input:checked {
   background-color: var(--blue);
   border-color: var(--darkBlue);
 }
 .modal-content {
   background: var(--black);
-  border: solid 1px rgb(247, 243, 243);
+  border: solid 1px rgba(247, 243, 243, 0.2);
   border-radius: 6px !important;
 }
 @media only screen and (max-width: 992px) {

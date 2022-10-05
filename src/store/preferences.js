@@ -1,11 +1,15 @@
 import { defineStore, acceptHMRUpdate } from "pinia";
-import questions from "../assets/questions.json";
+import questions from "../data/questions.json";
 
 export const usePreferencesStore = defineStore({
   id: "preferences",
   state: () => ({
     preferences: questions,
     answers: {},
+    clarification: {
+      title: null,
+      body: null,
+    },
   }),
   getters: {
     data: (state) => state.preferences,
@@ -57,6 +61,16 @@ export const usePreferencesStore = defineStore({
         document.getElementById("coffee-content").classList.add("visible");
         document.getElementById("coffee-content").classList.add("fill");
       }, 1300);
+    },
+    setExplanation(e) {
+      this.clarification.title = e.question;
+      this.preferences.forEach((category) => {
+        category.entries.forEach((entry) => {
+          if (entry.question === e.question) {
+            this.clarification.body = entry.clarification;
+          }
+        });
+      });
     },
   },
   persist: true,
