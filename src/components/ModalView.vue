@@ -100,6 +100,9 @@ label {
   background-color: var(--blue);
   border-color: var(--darkBlue);
 }
+.modal-header {
+  border-bottom: none;
+}
 .modal-content {
   background: var(--black);
   border: solid 1px rgba(247, 243, 243, 0.2);

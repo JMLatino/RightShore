@@ -97,7 +97,9 @@
               </div>
             </div>
           </div>
-          <div class="base-machine position-relative">
+          <div
+            class="base-machine d-flex align-items-center justify-content-center"
+          >
             <RecommendationGauge />
           </div>
         </div>

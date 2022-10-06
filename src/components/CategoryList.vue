@@ -98,7 +98,7 @@ export default {
 }
 
 .accordion-button.completed {
-  background: var(--lightBlue);
+  background: var(--blue);
   color: #ffffff;
 }
 
