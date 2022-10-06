@@ -19,10 +19,7 @@
             {{ clarification.title }}
           </h5>
           <h5 v-else class="modal-title text-white" id="categoriesModalLabel">
-            <p>
-              This application is built by to help recommend the best strategy
-              by...
-            </p>
+            How we came to this decision
           </h5>
           <button
             type="button"
@@ -32,7 +29,31 @@
           ></button>
         </div>
         <div class="modal-body row mb-0">
-          <p v-html="clarification.body" class="m-0 py-0"></p>
+          <p
+            v-if="clarification.body"
+            v-html="clarification.body"
+            class="m-0 py-0"
+          ></p>
+          <span v-else>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Blanditiis vero, ad saepe quisquam doloremque ullam velit
+              veritatis nobis aliquam. Corrupti harum nisi porro repudiandae
+              asperiores quibusdam similique nobis officia unde!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Blanditiis vero, ad saepe quisquam doloremque ullam velit
+              veritatis nobis aliquam. Corrupti harum nisi porro repudiandae
+              asperiores quibusdam similique nobis officia unde!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Blanditiis vero, ad saepe quisquam doloremque ullam velit
+              veritatis nobis aliquam. Corrupti harum nisi porro repudiandae
+              asperiores quibusdam similique nobis officia unde!
+            </p>
+          </span>
         </div>
       </div>
     </div>
@@ -68,5 +89,8 @@ export default {
 .modal-content {
   background: var(--black);
   border: solid 1px rgba(247, 243, 243, 0.2);
+}
+.modal-header {
+  border-bottom: none;
 }
 </style>

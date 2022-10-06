@@ -2,21 +2,22 @@
   <div class="col-12 d-flex justify-content-between">
     <button
       type="button"
-      :disabled="!isComplete"
-      tabindex="0"
-      class="btn btn-custom mb-3 px-4 pt-0"
-      @click="brewStrategy"
-    >
-      Brew your strategy
-    </button>
-    <button
-      type="button"
       :disabled="!isReset"
       class="btn btn-reset mb-3 px-4 py-1"
       @click="handleReset"
     >
       Reset
     </button>
+    <button
+      type="button"
+      :disabled="!isComplete"
+      tabindex="0"
+      class="btn btn-custom mb-3 px-4 pt-0"
+      :class="{ complete: isComplete }"
+      @click="brewStrategy"
+    >
+      Brew your strategy
+    </button>    
   </div>
 </template>
 
@@ -98,7 +99,7 @@ export default {
   color: #ffffff;
   font-size: 1.5em;
   border-radius: 13px;
-  background: var(--blue);
+  background: var(--lightGrey);
   border: 1px solid #ffffff;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
   --bs-btn-hover-color: #ffffff;
@@ -108,7 +109,11 @@ export default {
   --bs-btn-active-border-color: var(--darkBlue);
 }
 
-.btn-reset {
-  background: #979797;
+.btn-custom-completed {
+  background: red;
+}
+
+.btn.btn-custom.complete {
+  background: var(--blue);
 }
 </style>

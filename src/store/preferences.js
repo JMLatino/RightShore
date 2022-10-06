@@ -72,6 +72,10 @@ export const usePreferencesStore = defineStore({
         });
       });
     },
+    clearClarification() {
+      this.clarification.title = null;
+      this.clarification.body = null;
+    },
   },
   persist: true,
 });
