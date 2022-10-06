@@ -11,8 +11,18 @@
     >
       <div class="modal-content p-3">
         <div class="modal-header">
-          <h5 class="modal-title text-white" id="categoriesModalLabel">
+          <h5
+            v-if="clarification.title"
+            class="modal-title text-white"
+            id="categoriesModalLabel"
+          >
             {{ clarification.title }}
+          </h5>
+          <h5 v-else class="modal-title text-white" id="categoriesModalLabel">
+            <p>
+              This application is built by to help recommend the best strategy
+              by...
+            </p>
           </h5>
           <button
             type="button"
@@ -21,8 +31,8 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body row">
-          <p v-html="clarification.body" class="mb-3"></p>
+        <div class="modal-body row mb-0">
+          <p v-html="clarification.body" class="m-0 py-0"></p>
         </div>
       </div>
     </div>

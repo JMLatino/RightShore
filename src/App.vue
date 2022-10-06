@@ -53,11 +53,10 @@
             </div>
             <div id="coffee-cup">
               <div>
-                <img
-                  src="@/assets/capgemini.svg"
-                  alt="Capgemini"
-                  class="capgemini-logo"
-                />
+                <div class="capabnlogos d-flex justify-content-center">
+                  <img src="@/assets/capgemini-icon.svg" alt="Capgemini" />
+                  <img src="@/assets/abnamro-icon.svg" alt="ABN AMRO" />
+                </div>
                 <svg
                   id="espresso"
                   class="position-absolute mx-auto"
@@ -98,7 +97,9 @@
               </div>
             </div>
           </div>
-          <div class="base-machine"></div>
+          <div class="base-machine position-relative">
+            <RecommendationGauge />
+          </div>
         </div>
       </div>
       <div class="table mb-0"></div>
@@ -111,6 +112,7 @@
 import QuestionList from "./components/QuestionList.vue";
 import BrewCoffee from "./components/BrewCoffee.vue";
 import ModalView from "./components/ModalView.vue";
+import RecommendationGauge from "./components/RecommendationGauge.vue";
 import ModalClarification from "./components/ModalClarification.vue";
 </script>
 
@@ -255,10 +257,10 @@ label,
   color: white;
 }
 
-.capgemini-logo {
+.capabnlogos {
   position: absolute;
   left: 43.8%;
-  top: 45.6%;
+  top: 42%;
   z-index: 1;
   width: 13%;
 }

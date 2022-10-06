@@ -2,20 +2,20 @@
   <div class="col-12 d-flex justify-content-between">
     <button
       type="button"
-      :disabled="!isReset"
-      class="btn btn-reset mb-3 px-4 py-1"
-      @click="handleReset"
-    >
-      Reset
-    </button>
-    <button
-      type="button"
       :disabled="!isComplete"
       tabindex="0"
       class="btn btn-custom mb-3 px-4 pt-0"
       @click="brewStrategy"
     >
       Brew your strategy
+    </button>
+    <button
+      type="button"
+      :disabled="!isReset"
+      class="btn btn-reset mb-3 px-4 py-1"
+      @click="handleReset"
+    >
+      Reset
     </button>
   </div>
 </template>

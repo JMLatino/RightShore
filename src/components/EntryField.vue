@@ -5,12 +5,13 @@
         <span class="position-relative">
           {{ entry.question }}
           <img
+            src="../assets/questionmark.svg"
             data-bs-toggle="modal"
             data-bs-target="#modalClarification"
-            @click="handleToggle(entry)"
-            src="../assets/questionmark.svg"
+            @mouseover="handleToggle(entry)"
             height="22"
-            alt=""
+            role="button"
+            alt="Question"
           />
         </span>
       </label>
