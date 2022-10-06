@@ -18,10 +18,10 @@
       <div
         class="col-4 text-center text-center d-flex flex-column justify-content-center align-items-center"
       >
-        <span> Read about this recommendation </span>
-        <!-- <button data-bs-toggle="modal" data-bs-target="#modalClarification">
-          Click
-        </button> -->
+        <h3 data-bs-toggle="modal" data-bs-target="#modalClarification">
+          <span> Read </span>
+          more about this recommendation
+        </h3>
       </div>
     </div>
   </div>
