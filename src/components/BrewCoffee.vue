@@ -39,8 +39,6 @@ export default {
         btnCheck.checked = false;
       }
 
-      document.getElementById("recommendation").innerHTML = "";
-      // this.$refs["recommendation"].data.innerHTML = "";
       document.getElementById("waveShape").classList.remove("animate");
       coffeContent.classList.remove("visible");
       coffeContent.classList.add("invisible");
