@@ -1,20 +1,20 @@
 <template>
-  <div class="text-white w-75">
-    <div class="row gauge col-12 rounded p-2">
+  <div v-if="gaugeVisible" class="text-white w-75">
+    <div class="row gauge col-12 rounded p-2 mx-auto">
       <div
         class="col-4 text-center d-flex justify-content-center align-content-center flex-column"
       >
-        <h3 class="mb-0">{{ recommendation1[0] }}</h3>
+        <h3 class="mb-0">{{ recommendation.primary }}</h3>
         <h2 class="mb-0 d-flex justify-content-center">
-          {{ recommendation1[1] }} %
+          {{ recommendation.percentage }} %
         </h2>
       </div>
       <div
         class="col-4 text-center d-flex flex-column justify-content-center align-items-center"
       >
-        <h3 class="mb-0">{{ recommendation2[0] }}</h3>
+        <h3 class="mb-0">{{ recommendation.secondary }}</h3>
         <h2 class="mb-0 d-flex justify-content-center">
-          {{ recommendation2[1] }} %
+          {{ 100 - recommendation.percentage }} %
         </h2>
       </div>
       <div
@@ -45,15 +45,17 @@
 import { usePreferencesStore } from "../store/preferences";
 export default {
   name: "RecommendationGauge",
-  data() {
-    return {
-      recommendation1: ["Onshore", 80],
-      recommendation2: ["Offshore", 20],
-    };
-  },
   methods: {
     handleClear() {
       this.preferences.clearClarification();
+    },
+  },
+  computed: {
+    recommendation() {
+      return this.preferences.recommendation;
+    },
+    gaugeVisible() {
+      return this.preferences.gaugeVisible;
     },
   },
   setup() {
@@ -71,9 +73,11 @@ export default {
   border: solid 1px rgb(247, 243, 243);
   border-radius: 6px !important;
 }
+
 .btn:hover {
   border: solid 1px var(--blue);
 }
+
 .btn-active {
   color: #fff;
   --bs-btn-active-color: white;

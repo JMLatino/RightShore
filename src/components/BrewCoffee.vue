@@ -17,39 +17,28 @@
       @click="brewStrategy"
     >
       Brew your strategy
-    </button>    
+    </button>
   </div>
 </template>
 
 <script>
 import { usePreferencesStore } from "@/store/preferences";
 export default {
-  data() {
-    return {
-      coffeeResults: [
-        "Onshore Heavy <div>with</div> Offshore presence",
-        "Nearshore Heavy <div>with</div> Offshore presence",
-        "Offshore Heavy <div>with</div> Onshore presence",
-      ],
-    };
-  },
   methods: {
     handleReset() {
-      const radioBtn = document.getElementsByClassName("btn-check");
-      const checkBtn = document.getElementsByClassName("form-check-input");
       const coffeContent = document.getElementById("coffee-content");
       const pourEffects = document.getElementById("pour-effects");
       const pourElements = document.getElementsByClassName("pour-effect");
-
-      for (let i = 0; i < radioBtn.length; i++) {
-        radioBtn[i].checked = false;
+      for (const btnCheck of document.getElementsByClassName("btn-check")) {
+        btnCheck.checked = false;
       }
 
-      for (let i = 0; i < checkBtn.length; i++) {
-        checkBtn[i].checked = false;
+      for (const btnCheck of document.getElementsByClassName(
+        "form-check-input"
+      )) {
+        btnCheck.checked = false;
       }
 
-      document.getElementById("recommendation").innerHTML = "";
       document.getElementById("waveShape").classList.remove("animate");
       coffeContent.classList.remove("visible");
       coffeContent.classList.add("invisible");
@@ -67,12 +56,6 @@ export default {
     brewStrategy() {
       window.scrollTo(0, document.body.scrollHeight);
       this.preferences.handleClick();
-
-      const option = this.preferences.answers.q1;
-
-      if (this.coffeeResults[option] !== undefined)
-        document.getElementById("recommendation").innerHTML =
-          this.coffeeResults[option];
     },
   },
   computed: {

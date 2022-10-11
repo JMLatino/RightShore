@@ -36,16 +36,17 @@
           ></p>
           <span v-else>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Blanditiis vero, ad saepe quisquam doloremque ullam velit
-              veritatis nobis aliquam. Corrupti harum nisi porro repudiandae
-              asperiores quibusdam similique nobis officia unde!
+              We believe the
+              <b>{{ preferences.recommendation.primary }}</b> with
+              <b>{{ preferences.recommendation.secondary }}</b> combination is
+              the best strategy with which to set up your project considering
+              your constraints.
             </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Blanditiis vero, ad saepe quisquam doloremque ullam velit
-              veritatis nobis aliquam. Corrupti harum nisi porro repudiandae
-              asperiores quibusdam similique nobis officia unde!
+              Our recommendation system is designed in such a way where
+              recommendation can be accurately calculated using Machine Learning
+              technology. veritatis nobis aliquam. Corrupti harum nisi porro
+              repudiandae asperiores quibusdam similique nobis officia unde!
             </p>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
