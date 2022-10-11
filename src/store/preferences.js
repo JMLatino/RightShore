@@ -10,6 +10,13 @@ export const usePreferencesStore = defineStore({
       title: null,
       body: null,
     },
+    recommendation: {},
+    recommendationOptions: [
+      { primary: "Onshore", secondary: "Offshore", percentage: 65 },
+      { primary: "Offshore", secondary: "Onshore", percentage: 55 },
+      { primary: "Nearshore", secondary: "Onshore", percentage: 55 },
+    ],
+    gaugeVisible: false,
   }),
   getters: {
     data: (state) => state.preferences,
@@ -46,9 +53,13 @@ export const usePreferencesStore = defineStore({
         })
       );
       this.answers = {};
+      this.recommendation = {};
+      this.gaugeVisible = false;
       window.localStorage.removeItem("preferences");
     },
     handleClick() {
+      // Assignment temporarily hardcoded until backend fixed
+      this.recommendation = this.recommendationOptions[0];
       document.getElementById("pour-effects").classList.remove("invisible");
       document.getElementById("pour-effects").classList.add("visible");
       let pourElements = document.getElementsByClassName("pour-effect");
@@ -61,6 +72,9 @@ export const usePreferencesStore = defineStore({
         document.getElementById("coffee-content").classList.add("visible");
         document.getElementById("coffee-content").classList.add("fill");
       }, 1300);
+      setTimeout(() => {
+        this.gaugeVisible = true;
+      }, 4500);
     },
     setExplanation(e) {
       this.clarification.title = e.question;
