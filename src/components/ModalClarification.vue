@@ -13,42 +13,42 @@
         <div class="modal-header">
           <h5
             v-if="clarification.title"
-            class="modal-title text-white"
+            class="modal-title"
             id="categoriesModalLabel"
           >
             {{ clarification.title }}
           </h5>
-          <h5 v-else class="modal-title text-white" id="categoriesModalLabel">
+          <h5 v-else class="modal-title" id="categoriesModalLabel">
             How we came to this decision
           </h5>
           <button
             type="button"
-            class="btn-close btn-close-white"
+            class="btn-close"
             data-bs-dismiss="modal"
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body row mb-0">
+        <div class="modal-body row pt-0">
           <p
             v-if="clarification.body"
             v-html="clarification.body"
             class="m-0 py-0"
           ></p>
           <span v-else>
-            <p>
+            <p class="text-black">
               We believe the
               <b>{{ preferences.recommendation.primary }}</b> with
               <b>{{ preferences.recommendation.secondary }}</b> combination is
               the best strategy with which to set up your project considering
               your constraints.
             </p>
-            <p>
+            <p class="text-black">
               Our recommendation system is designed in such a way where
               recommendation can be accurately calculated using Machine Learning
               technology. veritatis nobis aliquam. Corrupti harum nisi porro
               repudiandae asperiores quibusdam similique nobis officia unde!
             </p>
-            <p>
+            <p class="text-black">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Blanditiis vero, ad saepe quisquam doloremque ullam velit
               veritatis nobis aliquam. Corrupti harum nisi porro repudiandae
@@ -88,7 +88,7 @@ export default {
 
 <style scoped>
 .modal-content {
-  background: var(--black);
+  background: rgba(255, 255, 255, 0.9);
   border: solid 1px rgba(247, 243, 243, 0.2);
 }
 .modal-header {

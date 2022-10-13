@@ -21,7 +21,7 @@
     <div
       :id="'collapse' + name"
       class="accordion-collapse collapse"
-      :class="{ 'accordion-collapse collapse specific': isFilledIn }"
+      :class="{ show: name === 0 }"
       :aria-labelledby="name"
       data-bs-parent="#accordion-group"
     >
@@ -108,9 +108,9 @@ export default {
 }
 
 div#collapse0 {
-  display: block;
+  /* display: block; */
 }
 .specific {
-  display: none !important;
+  /* display: none !important; */
 }
 </style>
