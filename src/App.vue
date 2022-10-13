@@ -79,12 +79,17 @@
                     />
                   </mask>
                   <g mask="url(#coffee)">
-                    <g id="coffee-content" class="invisible">
-                      <path
-                        id="waveShape"
-                        d="M395 300V2.5C395 2.5 394.02 2.4 393.203 2.4C393.203 2.4 351.553 0.1 327.053 0C302.553 0 260.74 2.4 260.74 2.4C240.65 3.5 211.25 4.2 208.637 4.3C205.37 4.2 176.46 3.5 156.37 2.4C156.37 2.4 114.23 0.1 89.73 0C65.23 0 23.09 2.4 23.09 2.4C3 3.5 -26.5633 4.2 -29.1767 4.3C-32.4433 4.2 -61.8433 3.5 -81.77 2.4C-81.77 2.4 -86.8333 2.1 -95 1.7V300H395Z"
-                      />
-                    </g>
+                    <Transition>
+                      <g
+                        id="coffee-content"
+                        :class="{ invisible: !coffeeStatus }"
+                      >
+                        <path
+                          id="waveShape"
+                          d="M395 300V2.5C395 2.5 394.02 2.4 393.203 2.4C393.203 2.4 351.553 0.1 327.053 0C302.553 0 260.74 2.4 260.74 2.4C240.65 3.5 211.25 4.2 208.637 4.3C205.37 4.2 176.46 3.5 156.37 2.4C156.37 2.4 114.23 0.1 89.73 0C65.23 0 23.09 2.4 23.09 2.4C3 3.5 -26.5633 4.2 -29.1767 4.3C-32.4433 4.2 -61.8433 3.5 -81.77 2.4C-81.77 2.4 -86.8333 2.1 -95 1.7V300H395Z"
+                        />
+                      </g>
+                    </Transition>
                     <foreignObject
                       v-if="
                         Object.keys(preferences.recommendation).length !== 0
@@ -94,22 +99,24 @@
                       width="150"
                       height="150"
                     >
-                      <div
-                        id="recommendation"
-                        class="text-center fw-bold"
-                        xmlns="http://www.w3.org/1999/xhtml"
-                      >
-                        <div class="fs-5">
-                          {{ Object.values(preferences.recommendation)[0] }}
+                      <Transition>
+                        <div
+                          id="recommendation"
+                          class="text-center fw-bold"
+                          xmlns="http://www.w3.org/1999/xhtml"
+                        >
+                          <div class="fs-5">
+                            {{ Object.values(preferences.recommendation)[0] }}
+                          </div>
+                          <div>
+                            with
+                            <span class="fs-5">
+                              {{ Object.values(preferences.recommendation)[1] }}
+                            </span>
+                          </div>
+                          presence
                         </div>
-                        <div>
-                          with
-                          <span class="fs-5">
-                            {{ Object.values(preferences.recommendation)[1] }}
-                          </span>
-                        </div>
-                        presence
-                      </div>
+                      </Transition>
                     </foreignObject>
                   </g>
                 </svg>
@@ -125,18 +132,20 @@
       </div>
       <div class="table mb-0"></div>
     </div>
-    <ModalView />
+    <ModalTechCategories />
     <ModalClarification />
   </main>
 </template>
 <script setup>
 import QuestionList from "./components/QuestionList.vue";
 import BrewCoffee from "./components/BrewCoffee.vue";
-import ModalView from "./components/ModalView.vue";
+import ModalTechCategories from "./components/ModalTechCategories.vue";
 import RecommendationGauge from "./components/RecommendationGauge.vue";
 import ModalClarification from "./components/ModalClarification.vue";
 import { usePreferencesStore } from "../src/store/preferences";
+import { ref } from "vue";
 const preferences = usePreferencesStore();
+const coffeeStatus = ref(preferences.coffeeContent);
 </script>
 
 <style>
@@ -342,6 +351,20 @@ label,
 #recommendation {
   color: var(--darkGrey);
   z-index: 4;
+}
+
+.modal-body > p > p {
+  color: black !important;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 
 @keyframes fillAction {

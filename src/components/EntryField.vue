@@ -1,5 +1,5 @@
 <template>
-  <div class="m-3 d-flex justify-content-between">
+  <div class="m-3 d-flex justify-content-between flex-sm-row flex-column">
     <div class="d-flex gap-3">
       <label class="form-label">
         <span class="position-relative">

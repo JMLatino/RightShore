@@ -17,6 +17,7 @@ export const usePreferencesStore = defineStore({
       { primary: "Nearshore", secondary: "Onshore", percentage: 55 },
     ],
     gaugeVisible: false,
+    coffeeContent: false,
   }),
   getters: {
     data: (state) => state.preferences,
@@ -55,6 +56,7 @@ export const usePreferencesStore = defineStore({
       this.answers = {};
       this.recommendation = {};
       this.gaugeVisible = false;
+      this.coffeeContent = false;
       window.localStorage.removeItem("preferences");
     },
     handleClick() {
@@ -70,6 +72,7 @@ export const usePreferencesStore = defineStore({
       setTimeout(() => {
         document.getElementById("coffee-content").classList.remove("invisible");
         document.getElementById("coffee-content").classList.add("visible");
+        this.coffeeContent = true;
         document.getElementById("coffee-content").classList.add("fill");
       }, 1300);
       setTimeout(() => {

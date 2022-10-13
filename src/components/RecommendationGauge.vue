@@ -1,44 +1,46 @@
 <template>
-  <div v-if="gaugeVisible" class="text-white w-75">
-    <div class="row gauge col-12 rounded p-2 mx-auto">
-      <div
-        class="col-4 text-center d-flex justify-content-center align-content-center flex-column"
-      >
-        <h3 class="mb-0">{{ recommendation.primary }}</h3>
-        <h2 class="mb-0 d-flex justify-content-center">
-          {{ recommendation.percentage }} %
-        </h2>
-      </div>
-      <div
-        class="col-4 text-center d-flex flex-column justify-content-center align-items-center"
-      >
-        <h3 class="mb-0">{{ recommendation.secondary }}</h3>
-        <h2 class="mb-0 d-flex justify-content-center">
-          {{ 100 - recommendation.percentage }} %
-        </h2>
-      </div>
-      <div
-        class="col-4 text-center d-flex flex-column justify-content-center align-items-center"
-        @click="handleClear"
-      >
-        <label
-          type="label"
-          for="q-23"
-          class="btn btn-active"
-          data-bs-toggle="modal"
-          data-bs-target="#categoriesModal"
+  <Transition>
+    <div v-if="gaugeVisible" class="text-white w-75">
+      <div class="row gauge col-12 rounded p-2 mx-auto">
+        <div
+          class="col-4 text-center d-flex justify-content-center align-content-center flex-column"
         >
-          <p
-            class="mb-0"
+          <h3 class="mb-0">{{ recommendation.primary }}</h3>
+          <h2 class="mb-0 d-flex justify-content-center">
+            {{ recommendation.percentage }} %
+          </h2>
+        </div>
+        <div
+          class="col-4 text-center d-flex flex-column justify-content-center align-items-center"
+        >
+          <h3 class="mb-0">{{ recommendation.secondary }}</h3>
+          <h2 class="mb-0 d-flex justify-content-center">
+            {{ 100 - recommendation.percentage }} %
+          </h2>
+        </div>
+        <div
+          class="col-4 text-center d-flex flex-column justify-content-center align-items-center"
+          @click="handleClear"
+        >
+          <label
+            type="label"
+            for="q-23"
+            class="btn btn-active"
             data-bs-toggle="modal"
-            data-bs-target="#modalClarification"
+            data-bs-target="#categoriesModal"
           >
-            How we came to this recommendation
-          </p>
-        </label>
+            <p
+              class="mb-0"
+              data-bs-toggle="modal"
+              data-bs-target="#modalClarification"
+            >
+              How we came to this recommendation
+            </p>
+          </label>
+        </div>
       </div>
     </div>
-  </div>
+  </Transition>
 </template>
 
 <script>

@@ -26,7 +26,7 @@ import { usePreferencesStore } from "@/store/preferences";
 export default {
   methods: {
     handleReset() {
-      const coffeContent = document.getElementById("coffee-content");
+      const coffeeContent = document.getElementById("coffee-content");
       const pourEffects = document.getElementById("pour-effects");
       const pourElements = document.getElementsByClassName("pour-effect");
       for (const btnCheck of document.getElementsByClassName("btn-check")) {
@@ -40,9 +40,9 @@ export default {
       }
 
       document.getElementById("waveShape").classList.remove("animate");
-      coffeContent.classList.remove("visible");
-      coffeContent.classList.add("invisible");
-      coffeContent.classList.remove("fill");
+      coffeeContent.classList.remove("visible");
+      coffeeContent.classList.add("invisible");
+      coffeeContent.classList.remove("fill");
 
       pourEffects.classList.add("invisible");
       pourEffects.classList.remove("visible");

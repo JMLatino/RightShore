@@ -52,7 +52,7 @@
 <script>
 import { usePreferencesStore } from "../store/preferences";
 export default {
-  name: "ModalView",
+  name: "ModalTechCategories",
   data() {
     return {
       inputs: [],
@@ -104,7 +104,7 @@ label {
   border-bottom: none;
 }
 .modal-content {
-  background: var(--black);
+  background: rgba(51, 51, 51, 0.99);
   border: solid 1px rgba(247, 243, 243, 0.2);
   border-radius: 6px !important;
 }
