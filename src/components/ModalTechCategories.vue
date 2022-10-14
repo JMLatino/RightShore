@@ -29,14 +29,14 @@
             class="col-12 col-sm-6 col-md-4 col-lg-3"
           >
             <div class="form-check">
-              <label :for="`q${subQuestions[0].id}-${i}`">
+              <label :for="`q${subQuestions[0].id}-${i + 1}`">
                 <input
                   type="checkbox"
-                  :id="`q${subQuestions[0].id}-${i}`"
+                  :id="`q${subQuestions[0].id}-${i + 1}`"
                   class="form-check-input"
                   v-model="inputs"
                   :value="i"
-                  @click="setAnswer(subQuestions[0].id, i)"
+                  @click="setAnswer(subQuestions[0].id, i + 1)"
                   :disabled="inputs.length > 4 && inputs.indexOf(i) === -1"
                 />
                 {{ subQuestion }}
@@ -70,12 +70,9 @@ export default {
       this.preferences.setPreference({ index, answer });
     },
     retrieveSelection() {
-      for (const [q, a] of Object.entries(
-        JSON.parse(localStorage.getItem("preferences")).answers
-      )) {
-        if (q === "q23") {
-          document.getElementById(`q23-${a}`).checked = true;
-        }
+      for (const el of JSON.parse(localStorage.getItem("preferences"))
+        .modalAnswers) {
+        document.getElementById(`q23-${el}`).checked = true;
       }
     },
   },

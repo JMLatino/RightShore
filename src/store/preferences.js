@@ -6,6 +6,7 @@ export const usePreferencesStore = defineStore({
   state: () => ({
     preferences: questions,
     answers: {},
+    modalAnswers: [],
     clarification: {
       title: null,
       body: null,
@@ -40,9 +41,19 @@ export const usePreferencesStore = defineStore({
     setPreference(locator = { index: Number, answer: String }) {
       const { index, answer } = locator;
       this.answers[`q${index}`] = answer;
-      this.preferences.forEach((category) => {
-        category.entries.forEach((element) => {
-          if (element.id == index) element.answered = true;
+      if (index !== 23) {
+        this.preferences.forEach((category) => {
+          category.entries.forEach((element) => {
+            if (element.id == index) element.answered = true;
+          });
+        });
+      }
+      this.preferences.forEach((cate) => {
+        cate.entries.forEach((entry) => {
+          if (entry.id === index) {
+            if (entry.id == index) entry.answered = true;
+            this.modalAnswers.push(answer);
+          }
         });
       });
     },
@@ -55,6 +66,7 @@ export const usePreferencesStore = defineStore({
       );
       this.answers = {};
       this.recommendation = {};
+      this.modalAnswers = [];
       this.gaugeVisible = false;
       this.coffeeContent = false;
       window.localStorage.removeItem("preferences");
