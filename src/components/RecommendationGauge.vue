@@ -29,13 +29,14 @@
             data-bs-toggle="modal"
             data-bs-target="#categoriesModal"
           >
-            <p
+            <span
               class="mb-0"
               data-bs-toggle="modal"
               data-bs-target="#modalClarification"
             >
-              How we came to this recommendation
-            </p>
+              <p class="m-0">How we</p>
+              <p class="m-0">determine this</p>
+            </span>
           </label>
         </div>
       </div>

@@ -19,7 +19,7 @@
             {{ clarification.title }}
           </h5>
           <h5 v-else class="modal-title" id="categoriesModalLabel">
-            How we came to this decision
+            How we determine this
           </h5>
           <button
             type="button"
