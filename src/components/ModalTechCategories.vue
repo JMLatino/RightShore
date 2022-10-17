@@ -35,7 +35,7 @@
                   :id="`q${subQuestions[0].id}-${i + 1}`"
                   class="form-check-input"
                   v-model="inputs"
-                  :value="i"
+                  :value="i + 1"
                   @click="setAnswer(subQuestions[0].id, i + 1)"
                   :disabled="inputs.length > 4 && inputs.indexOf(i) === -1"
                 />
@@ -44,6 +44,8 @@
             </div>
           </div>
         </div>
+        <div class="text-white fs-1">{{ inputs }}</div>
+        <div class="text-white fs-1">{{ modalAnswers }}</div>
       </div>
     </div>
   </div>
@@ -59,6 +61,9 @@ export default {
     };
   },
   computed: {
+    modalAnswers() {
+      return this.preferences.modalAnswers;
+    },
     subQuestions() {
       return this.preferences.data[3].entries.filter((el) => {
         return el.id == "23";
@@ -78,6 +83,10 @@ export default {
   },
   mounted() {
     this.retrieveSelection();
+    this.inputs = this.preferences.modalAnswers;
+  },
+  updated() {
+    this.inputs = this.preferences.modalAnswers;
   },
   setup() {
     const preferences = usePreferencesStore();
@@ -93,18 +102,22 @@ export default {
 label {
   font-size: 12px;
 }
+
 .form-check-input:checked {
   background-color: var(--blue);
   border-color: var(--darkBlue);
 }
+
 .modal-header {
   border-bottom: none;
 }
+
 .modal-content {
   background: rgba(51, 51, 51, 0.99);
   border: solid 1px rgba(247, 243, 243, 0.2);
   border-radius: 6px !important;
 }
+
 @media only screen and (max-width: 992px) {
   #categoriesModal > div {
     max-width: 80% !important;

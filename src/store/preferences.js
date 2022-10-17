@@ -71,7 +71,7 @@ export const usePreferencesStore = defineStore({
       this.coffeeContent = false;
       window.localStorage.removeItem("preferences");
     },
-    handleClick() {
+    handleBrewYourStrategyClick() {
       // Assignment temporarily hardcoded until backend fixed
       this.recommendation = this.recommendationOptions[0];
       document.getElementById("pour-effects").classList.remove("invisible");

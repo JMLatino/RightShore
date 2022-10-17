@@ -39,24 +39,30 @@
           {{ answer }}
         </label>
         <div v-else id="q-23" class="d-flex flex-column align-items-end">
-          <!-- <div class="text-light pb-2">
-            <div
-              v-if="associatedAnswer"
-              class="d-flex justify-content-end py-2 ps-1"
-            >
-              {{ associatedAnswer }}
-            </div>
-          </div> -->
           <label
             type="label"
             for="q-23"
-            class="btn btn-active"
+            class="btn btn-active m-0 mb-2"
             :class="{ completed: watchModal }"
             data-bs-toggle="modal"
             data-bs-target="#categoriesModal"
           >
-            {{ preferences.modalSelected }} categories
+            {{ watchModal ? "Change" : "Select" }} categories
           </label>
+          <div
+            v-if="associatedAnswer"
+            class="d-flex flex-column gap-2 text-light"
+          >
+            <div
+              v-for="(item, i) in associatedAnswer"
+              :key="i"
+              class="d-flex justify-content-end"
+            >
+              <p class="mb-0">
+                {{ i === associatedAnswer.length - 1 ? item : item + "," }}
+              </p>
+            </div>
+          </div>
         </div>
       </template>
     </div>
@@ -70,7 +76,9 @@ export default {
   computed: {
     associatedAnswer() {
       if (Object.keys(this.preferences.answers === "q23")) {
-        return this.entry.answers[0][Object.values(this.preferences.answers)];
+        return this.modalAnswers.map((i) =>
+          Object.values(this.entry.answers[0][i - 1]).join("")
+        );
       }
       return false;
     },
@@ -79,6 +87,9 @@ export default {
         return true;
       }
       return false;
+    },
+    modalAnswers() {
+      return this.preferences.modalAnswers;
     },
   },
   methods: {
