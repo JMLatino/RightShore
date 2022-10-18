@@ -47,15 +47,16 @@ export const usePreferencesStore = defineStore({
             if (element.id == index) element.answered = true;
           });
         });
-      }
-      this.preferences.forEach((cate) => {
-        cate.entries.forEach((entry) => {
-          if (entry.id === index) {
-            if (entry.id == index) entry.answered = true;
-            this.modalAnswers.push(answer);
-          }
+      } else {
+        this.preferences.forEach((cate) => {
+          cate.entries.forEach((entry) => {
+            if (entry.id === index) {
+              if (entry.id == index) entry.answered = true;
+              this.modalAnswers.push(answer);
+            }
+          });
         });
-      });
+      }
     },
     clearForm() {
       this.preferences.forEach((category) =>

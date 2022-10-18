@@ -37,7 +37,7 @@
                   v-model="inputs"
                   :value="i + 1"
                   @click="setAnswer(subQuestions[0].id, i + 1)"
-                  :disabled="inputs.length > 4 && inputs.indexOf(i) === -1"
+                  :disabled="inputs.length > 4 && inputs.indexOf(i + 1) === -1"
                 />
                 {{ subQuestion }}
               </label>

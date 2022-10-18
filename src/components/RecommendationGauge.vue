@@ -27,7 +27,7 @@
             for="q-23"
             class="btn btn-active"
             data-bs-toggle="modal"
-            data-bs-target="#categoriesModal"
+            data-bs-target="#modalClarification"
           >
             <span
               class="mb-0"

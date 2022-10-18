@@ -3,7 +3,7 @@
     class="modal fade"
     id="modalClarification"
     tabindex="-1"
-    aria-labelledby="categoriesModalLabel"
+    aria-labelledby="clarificationModalLabel"
     aria-hidden="true"
   >
     <div
@@ -14,11 +14,11 @@
           <h5
             v-if="clarification.title"
             class="modal-title"
-            id="categoriesModalLabel"
+            id="clarificationModalLabel"
           >
             {{ clarification.title }}
           </h5>
-          <h5 v-else class="modal-title" id="categoriesModalLabel">
+          <h5 v-else class="modal-title" id="clarificationModalLabel">
             How we determine this
           </h5>
           <button
