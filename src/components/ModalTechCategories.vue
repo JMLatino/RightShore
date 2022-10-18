@@ -32,9 +32,9 @@
               <label :for="`q${subQuestions[0].id}-${i + 1}`">
                 <input
                   type="checkbox"
+                  :ref="`target${i + 1}`"
                   :id="`q${subQuestions[0].id}-${i + 1}`"
                   class="form-check-input"
-                  v-model="inputs"
                   :value="i + 1"
                   @click="setAnswer(subQuestions[0].id, i + 1)"
                   :disabled="inputs.length > 4 && inputs.indexOf(i + 1) === -1"
@@ -44,8 +44,6 @@
             </div>
           </div>
         </div>
-        <div class="text-white fs-1">{{ inputs }}</div>
-        <div class="text-white fs-1">{{ modalAnswers }}</div>
       </div>
     </div>
   </div>
@@ -73,6 +71,10 @@ export default {
   methods: {
     setAnswer(index, answer) {
       this.preferences.setPreference({ index, answer });
+      const target = this.$refs[`target${answer}`][0];
+      if (!target.checked) {
+        this.preferences.uncheckModalAnswer(answer);
+      }
     },
     retrieveSelection() {
       for (const el of JSON.parse(localStorage.getItem("preferences"))

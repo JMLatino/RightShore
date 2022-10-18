@@ -72,6 +72,9 @@ export const usePreferencesStore = defineStore({
       this.coffeeContent = false;
       window.localStorage.removeItem("preferences");
     },
+    uncheckModalAnswer(answer) {
+      this.modalAnswers = this.modalAnswers.filter((el) => el !== answer);
+    },
     handleBrewYourStrategyClick() {
       // Assignment temporarily hardcoded until backend fixed
       this.recommendation = this.recommendationOptions[0];
