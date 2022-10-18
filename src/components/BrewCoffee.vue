@@ -55,7 +55,7 @@ export default {
     },
     brewStrategy() {
       window.scrollTo(0, document.body.scrollHeight);
-      this.preferences.handleClick();
+      this.preferences.handleBrewYourStrategyClick();
     },
   },
   computed: {

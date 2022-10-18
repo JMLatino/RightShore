@@ -47,15 +47,16 @@ export const usePreferencesStore = defineStore({
             if (element.id == index) element.answered = true;
           });
         });
-      }
-      this.preferences.forEach((cate) => {
-        cate.entries.forEach((entry) => {
-          if (entry.id === index) {
-            if (entry.id == index) entry.answered = true;
-            this.modalAnswers.push(answer);
-          }
+      } else {
+        this.preferences.forEach((cate) => {
+          cate.entries.forEach((entry) => {
+            if (entry.id === index) {
+              if (entry.id == index) entry.answered = true;
+              this.modalAnswers.push(answer);
+            }
+          });
         });
-      });
+      }
     },
     clearForm() {
       this.preferences.forEach((category) =>
@@ -71,7 +72,10 @@ export const usePreferencesStore = defineStore({
       this.coffeeContent = false;
       window.localStorage.removeItem("preferences");
     },
-    handleClick() {
+    uncheckModalAnswer(answer) {
+      this.modalAnswers = this.modalAnswers.filter((el) => el !== answer);
+    },
+    handleBrewYourStrategyClick() {
       // Assignment temporarily hardcoded until backend fixed
       this.recommendation = this.recommendationOptions[0];
       document.getElementById("pour-effects").classList.remove("invisible");
