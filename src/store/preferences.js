@@ -17,7 +17,7 @@ export const usePreferencesStore = defineStore({
       { primary: "Offshore", secondary: "Onshore", percentage: 55 },
       { primary: "Nearshore", secondary: "Onshore", percentage: 55 },
     ],
-    gaugeVisible: false,
+    isRecommendationGaugeVisible: false,
     coffeeContent: false,
   }),
   getters: {
@@ -58,19 +58,23 @@ export const usePreferencesStore = defineStore({
         });
       }
     },
-    clearForm() {
+    resetAllAnswers() {
       this.preferences.forEach((category) =>
         category.entries.forEach((question) => {
           delete question.answered;
           return question;
         })
       );
+      window.localStorage.removeItem("preferences");
       this.answers = {};
       this.recommendation = {};
       this.modalAnswers = [];
-      this.gaugeVisible = false;
+      this.isRecommendationGaugeVisible = false;
       this.coffeeContent = false;
-      window.localStorage.removeItem("preferences");
+      for (let i = 0; i < 43; i++) {
+        // temp fix - static for loop to workaround bug
+        document.getElementById(`q23-${i}`).disabled = false;
+      }
     },
     uncheckModalAnswer(answer) {
       this.modalAnswers = this.modalAnswers.filter((el) => el !== answer);
@@ -92,7 +96,7 @@ export const usePreferencesStore = defineStore({
         document.getElementById("coffee-content").classList.add("fill");
       }, 1300);
       setTimeout(() => {
-        this.gaugeVisible = true;
+        this.isRecommendationGaugeVisible = true;
       }, 4500);
     },
     setExplanation(e) {

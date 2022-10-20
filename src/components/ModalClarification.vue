@@ -10,7 +10,7 @@
       class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
     >
       <div class="modal-content p-3">
-        <div class="modal-header">
+        <div class="modal-header border-0">
           <h5
             v-if="clarification.title"
             class="modal-title"
@@ -111,9 +111,5 @@ export default {
 .modal-content {
   background: rgba(255, 255, 255, 0.9);
   border: solid 1px rgba(247, 243, 243, 0.2);
-}
-
-.modal-header {
-  border-bottom: none;
 }
 </style>

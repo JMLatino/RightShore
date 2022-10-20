@@ -1,6 +1,6 @@
 <template>
   <Transition>
-    <div v-if="gaugeVisible" class="text-white w-75">
+    <div v-if="isRecommendationGaugeVisible" class="text-white w-75">
       <div class="row gauge col-12 rounded p-2 mx-auto">
         <div
           class="col-4 text-center d-flex justify-content-center align-content-center flex-column"
@@ -57,8 +57,8 @@ export default {
     recommendation() {
       return this.preferences.recommendation;
     },
-    gaugeVisible() {
-      return this.preferences.gaugeVisible;
+    isRecommendationGaugeVisible() {
+      return this.preferences.isRecommendationGaugeVisible;
     },
   },
   setup() {

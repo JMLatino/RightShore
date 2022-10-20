@@ -3,7 +3,7 @@
     <h2 class="accordion-header w-100 mb-2" :id="name">
       <button
         class="accordion-button d-flex rounded w-100 px-3 py-1"
-        :class="{ completed: isFilledIn }"
+        :class="{ completed: isSectionAnswered }"
         type="button"
         data-bs-toggle="collapse"
         :data-bs-target="'#collapse' + name"
@@ -21,7 +21,10 @@
     <div
       :id="'collapse' + name"
       class="accordion-collapse collapse"
-      :class="{ show: name === 0 && !isFilledIn, collapse: isFilledIn }"
+      :class="{
+        show: name === 0 && !isSectionAnswered,
+        collapse: isSectionAnswered,
+      }"
       :aria-labelledby="name"
       data-bs-parent="#accordion-group"
     >
@@ -42,7 +45,7 @@ export default {
     currentCount() {
       return this.preferences.answered(this.category.catIndex);
     },
-    isFilledIn() {
+    isSectionAnswered() {
       return (
         this.preferences.answered(this.category.catIndex) ===
         this.category.entries.length
