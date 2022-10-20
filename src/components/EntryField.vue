@@ -8,7 +8,7 @@
             src="../assets/questionmark.svg"
             data-bs-toggle="modal"
             data-bs-target="#modalClarification"
-            @mouseover="handleToggle(entry)"
+            @mouseover="setExplanation(entry)"
             height="22"
             role="button"
             alt="Question"
@@ -43,11 +43,11 @@
             type="label"
             for="q-23"
             class="btn btn-active m-0 mb-2"
-            :class="{ completed: watchModal }"
+            :class="{ completed: isModalAnswered }"
             data-bs-toggle="modal"
             data-bs-target="#categoriesModal"
           >
-            {{ watchModal ? "Change" : "Select" }} categories
+            {{ isModalAnswered ? "Change" : "Select" }} categories
           </label>
           <div
             v-if="associatedAnswer"
@@ -82,7 +82,7 @@ export default {
       }
       return false;
     },
-    watchModal() {
+    isModalAnswered() {
       if (this.preferences.modalSelected === "Change") {
         return true;
       }
@@ -93,10 +93,10 @@ export default {
     },
   },
   methods: {
-    handleToggle(e) {
+    setExplanation(e) {
       this.preferences.setExplanation(e);
     },
-    retrieveSelection() {
+    getSelectionsFromLocalStorage() {
       for (const [question, answer] of Object.entries(
         JSON.parse(localStorage.getItem("preferences")).answers
       )) {
@@ -111,7 +111,7 @@ export default {
     },
   },
   mounted() {
-    this.retrieveSelection();
+    this.getSelectionsFromLocalStorage();
   },
   setup() {
     const preferences = usePreferencesStore();

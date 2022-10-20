@@ -2,19 +2,20 @@
   <div class="col-12 d-flex justify-content-between">
     <button
       type="button"
-      :disabled="!isReset"
+      :disabled="!isResetClicked"
       class="btn btn-reset mb-3 px-4 py-1"
+      :class="{ active: isResetClicked }"
       @click="handleReset"
     >
       Reset
     </button>
     <button
       type="button"
-      :disabled="!isComplete"
+      :disabled="!allQuestionsAnswered"
       tabindex="0"
       class="btn btn-custom mb-3 px-4 pt-0"
-      :class="{ complete: isComplete }"
-      @click="brewStrategy"
+      :class="{ complete: allQuestionsAnswered }"
+      @click="handleBrewYourStrategyClick"
     >
       Brew your strategy
     </button>
@@ -51,18 +52,18 @@ export default {
         pourElements[i].classList.remove("pour");
         pourElements[i].classList.remove("moved");
       }
-      this.preferences.clearForm();
+      this.preferences.resetAllAnswers();
     },
-    brewStrategy() {
+    handleBrewYourStrategyClick() {
       window.scrollTo(0, document.body.scrollHeight);
       this.preferences.handleBrewYourStrategyClick();
     },
   },
   computed: {
-    isComplete() {
+    allQuestionsAnswered() {
       return Object.keys(this.preferences.answers).length === 23;
     },
-    isReset() {
+    isResetClicked() {
       return Object.keys(this.preferences.answers).length;
     },
   },
@@ -92,11 +93,11 @@ export default {
   --bs-btn-active-border-color: var(--darkBlue);
 }
 
-.btn-custom-completed {
-  background: red;
-}
-
 .btn.btn-custom.complete {
   background: var(--blue);
+}
+
+.active {
+  background: linear-gradient(180deg, #6b6b6b 0%, #828282 100%);
 }
 </style>
